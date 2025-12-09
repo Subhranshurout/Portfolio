@@ -25,6 +25,30 @@ A modern, production-ready portfolio website built with Next.js, Tailwind CSS, a
 - **Testing**: Jest + React Testing Library, Playwright
 - **CI/CD**: GitHub Actions
 
+## 🌐 Deploy for Free (No Server Needed!)
+
+### Deploy to Vercel (Recommended - 100% Free)
+
+1. **Go to**: https://vercel.com
+2. **Sign up** with your GitHub account
+3. **Click "Add New Project"**
+4. **Import** your `Subhranshurout/Portfolio` repository
+5. **Click "Deploy"** (Vercel auto-detects Next.js)
+6. **Done!** Your site is live in 2-3 minutes
+
+✅ **Free features included:**
+- Unlimited deployments
+- Automatic deployments on every git push
+- Free SSL certificate
+- Global CDN (fast loading worldwide)
+- Custom domain support (free)
+
+**Your site will be live at**: `https://portfolio-xxxxx.vercel.app`
+
+📖 **See `DEPLOYMENT.md` for detailed instructions and alternatives**
+
+---
+
 ## 📦 Installation
 
 1. **Clone the repository:**
