@@ -37,7 +37,7 @@ export function Header() {
           // Update active section
           const sections = ['about', 'experience', 'projects', 'skills', 'contact']
           const headerHeight = getHeaderHeight()
-          const current = sections.find((id) => {
+          const current = sections.find(id => {
             const element = document.getElementById(id)
             if (element) {
               const rect = element.getBoundingClientRect()
@@ -107,7 +107,7 @@ export function Header() {
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
     e.preventDefault()
     e.stopPropagation()
-    
+
     // Scroll immediately while menu is still open (more reliable)
     // This ensures the click event is fully processed before any state changes
     const element = document.getElementById(sectionId)
@@ -118,7 +118,7 @@ export function Header() {
       // Fallback: try scrolling to hash
       window.location.hash = sectionId
     }
-    
+
     // Close menu after a short delay to allow scroll to start
     // This prevents the menu closing animation from interfering
     setTimeout(() => {
@@ -127,7 +127,7 @@ export function Header() {
   }
 
   const toggleMobileMenu = () => {
-    setIsMobileMenuOpen((prev) => !prev)
+    setIsMobileMenuOpen(prev => !prev)
   }
 
   return (
@@ -158,7 +158,7 @@ export function Header() {
               {/* Logo */}
               <motion.a
                 href="#"
-                onClick={(e) => {
+                onClick={e => {
                   e.preventDefault()
                   window.scrollTo({ top: 0, behavior: 'smooth' })
                   setIsMobileMenuOpen(false)
@@ -173,17 +173,15 @@ export function Header() {
 
               {/* Desktop Navigation */}
               <div className="hidden lg:flex items-center gap-1">
-                {navItems.map((item) => {
+                {navItems.map(item => {
                   const isActive = activeSection === item.id
                   return (
                     <a
                       key={item.href}
                       href={item.href}
-                      onClick={(e) => handleNavClick(e, item.id)}
+                      onClick={e => handleNavClick(e, item.id)}
                       className={`relative px-4 py-2 text-sm font-medium rounded-lg transition-all duration-[180ms] min-h-[44px] flex items-center ${
-                        isActive
-                          ? 'text-accent'
-                          : 'text-text-secondary hover:text-text-primary'
+                        isActive ? 'text-accent' : 'text-text-secondary hover:text-text-primary'
                       }`}
                       aria-current={isActive ? 'page' : undefined}
                     >
@@ -207,7 +205,7 @@ export function Header() {
                 <ThemeToggle />
                 <motion.a
                   href="#contact"
-                  onClick={(e) => handleNavClick(e, 'contact')}
+                  onClick={e => handleNavClick(e, 'contact')}
                   className="px-4 py-2 gradient-primary text-white rounded-lg font-medium text-sm whitespace-nowrap min-h-[44px] flex items-center"
                   whileHover={{ scale: 1.05, y: -1 }}
                   whileTap={{ scale: 0.95 }}
@@ -222,7 +220,7 @@ export function Header() {
                 <ThemeToggle />
                 <motion.a
                   href="#contact"
-                  onClick={(e) => handleNavClick(e, 'contact')}
+                  onClick={e => handleNavClick(e, 'contact')}
                   className="px-3 py-2 gradient-primary text-white rounded-lg font-medium text-xs sm:text-sm whitespace-nowrap min-h-[44px] flex items-center touch-manipulation"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -230,7 +228,7 @@ export function Header() {
                 >
                   Hire Me
                 </motion.a>
-                
+
                 {/* Mobile Menu Button */}
                 <button
                   ref={menuButtonRef}
@@ -287,13 +285,13 @@ export function Header() {
                   className="lg:hidden overflow-hidden border-t border-border mt-2"
                 >
                   <div className="py-4 space-y-1">
-                    {navItems.map((item) => {
+                    {navItems.map(item => {
                       const isActive = activeSection === item.id
                       return (
                         <a
                           key={item.href}
                           href={item.href}
-                          onClick={(e) => handleNavClick(e, item.id)}
+                          onClick={e => handleNavClick(e, item.id)}
                           className={`block px-4 py-3 rounded-lg transition-all duration-[180ms] min-h-[44px] flex items-center touch-manipulation ${
                             isActive
                               ? 'bg-accent/20 text-accent font-semibold border-l-2 border-accent'

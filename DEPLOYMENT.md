@@ -66,13 +66,12 @@ Vercel is made by the creators of Next.js and offers the best free hosting for N
 
 ## 📊 Comparison
 
-| Platform | Free Tier | Next.js Support | Auto Deploy | Custom Domain |
-|----------|-----------|-----------------|-------------|--------------|
-| **Vercel** | ✅ Excellent | ✅ Perfect | ✅ Yes | ✅ Free |
-| **Netlify** | ✅ Good | ✅ Great | ✅ Yes | ✅ Free |
-| **GitHub Pages** | ✅ Basic | ⚠️ Static only | ⚠️ Manual | ✅ Free |
+| Platform         | Free Tier    | Next.js Support | Auto Deploy | Custom Domain |
+| ---------------- | ------------ | --------------- | ----------- | ------------- |
+| **Vercel**       | ✅ Excellent | ✅ Perfect      | ✅ Yes      | ✅ Free       |
+| **Netlify**      | ✅ Good      | ✅ Great        | ✅ Yes      | ✅ Free       |
+| **GitHub Pages** | ✅ Basic     | ⚠️ Static only  | ⚠️ Manual   | ✅ Free       |
 
 ## 🎯 Recommendation
 
 **Use Vercel** - It's the easiest, fastest, and best for Next.js apps. Takes 5 minutes to set up!
-

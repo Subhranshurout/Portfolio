@@ -15,7 +15,7 @@ const renderWithProviders = (ui: React.ReactElement) => {
 describe('Header', () => {
   it('renders navigation links', () => {
     renderWithProviders(<Header />)
-    
+
     expect(screen.getByText('About')).toBeInTheDocument()
     expect(screen.getByText('Experience')).toBeInTheDocument()
     expect(screen.getByText('Projects')).toBeInTheDocument()
@@ -25,14 +25,14 @@ describe('Header', () => {
 
   it('has accessible navigation landmark', () => {
     renderWithProviders(<Header />)
-    
+
     const nav = screen.getByRole('navigation', { name: 'Main navigation' })
     expect(nav).toBeInTheDocument()
   })
 
   it('renders theme toggle', () => {
     renderWithProviders(<Header />)
-    
+
     // There are multiple theme toggles (desktop and mobile), so use getAllByRole
     const themeToggles = screen.getAllByRole('button', { name: /Switch to/i })
     expect(themeToggles.length).toBeGreaterThan(0)
@@ -40,7 +40,7 @@ describe('Header', () => {
 
   it('renders hire me button', () => {
     renderWithProviders(<Header />)
-    
+
     // There are multiple "Hire Me" buttons (desktop and mobile), so use getAllByText
     const hireMeButtons = screen.getAllByText('Hire Me')
     expect(hireMeButtons.length).toBeGreaterThan(0)

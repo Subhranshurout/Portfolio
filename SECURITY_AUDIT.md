@@ -10,7 +10,7 @@
 - **Severity**: High
 - **Issue**: Command injection via -c/--cmd executes matches with shell:true
 - **Advisory**: [GHSA-5j98-mcp5-4vw2](https://github.com/advisories/GHSA-5j98-mcp5-4vw2)
-- **Location**: 
+- **Location**:
   - `node_modules/glob`
   - Via `@next/eslint-plugin-next` (Next.js ESLint plugin)
   - Via `eslint-config-next`
@@ -49,4 +49,3 @@ These vulnerabilities will be automatically resolved when:
 
 **Last Updated**: Current date
 **Next Review**: When Next.js releases update
-

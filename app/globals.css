@@ -10,9 +10,9 @@
   --color-bg: #0b1020;
   --color-card: rgba(255, 255, 255, 0.05);
   --color-glass: rgba(255, 255, 255, 0.08);
-  --color-accent: #06B6D4;
-  --color-primary-1: #5B21B6;
-  --color-primary-2: #06B6D4;
+  --color-accent: #06b6d4;
+  --color-primary-1: #5b21b6;
+  --color-primary-2: #06b6d4;
   --color-text-primary: #ffffff;
   --color-text-secondary: rgba(255, 255, 255, 0.75);
   --color-border: rgba(255, 255, 255, 0.12);
@@ -35,17 +35,17 @@
   --spacing-24: 96px;
 
   /* Typography Scale */
-  --font-size-xs: 0.75rem;    /* 12px */
-  --font-size-sm: 0.875rem;   /* 14px */
-  --font-size-base: 1rem;      /* 16px */
-  --font-size-lg: 1.125rem;    /* 18px */
-  --font-size-xl: 1.25rem;     /* 20px */
-  --font-size-2xl: 1.5rem;     /* 24px */
-  --font-size-3xl: 1.875rem;   /* 30px */
-  --font-size-4xl: 2.25rem;    /* 36px */
-  --font-size-5xl: 3rem;       /* 48px */
-  --font-size-6xl: 3.75rem;    /* 60px */
-  --font-size-7xl: 4.5rem;     /* 72px */
+  --font-size-xs: 0.75rem; /* 12px */
+  --font-size-sm: 0.875rem; /* 14px */
+  --font-size-base: 1rem; /* 16px */
+  --font-size-lg: 1.125rem; /* 18px */
+  --font-size-xl: 1.25rem; /* 20px */
+  --font-size-2xl: 1.5rem; /* 24px */
+  --font-size-3xl: 1.875rem; /* 30px */
+  --font-size-4xl: 2.25rem; /* 36px */
+  --font-size-5xl: 3rem; /* 48px */
+  --font-size-6xl: 3.75rem; /* 60px */
+  --font-size-7xl: 4.5rem; /* 72px */
 
   --line-height-tight: 1.25;
   --line-height-snug: 1.375;
@@ -88,7 +88,7 @@
   --header-height-desktop: 64px;
 }
 
-[data-theme="light"] {
+[data-theme='light'] {
   --color-bg: #f8fafc;
   --color-card: rgba(255, 255, 255, 0.95);
   --color-glass: rgba(255, 255, 255, 0.8);
@@ -136,7 +136,7 @@ body {
   html {
     scroll-behavior: auto;
   }
-  
+
   *,
   *::before,
   *::after {
@@ -150,14 +150,15 @@ body {
 body {
   background-color: var(--color-bg);
   color: var(--color-text-primary);
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
+    'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.6;
   font-size: var(--font-size-base);
-  transition: background-color var(--motion-medium) var(--motion-easing),
+  transition:
+    background-color var(--motion-medium) var(--motion-easing),
     color var(--motion-medium) var(--motion-easing);
   overflow-x: hidden;
   width: 100%;
@@ -171,20 +172,21 @@ body {
   .text-balance {
     text-wrap: balance;
   }
-  
+
   .glass {
     background: var(--color-glass);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid var(--color-border);
   }
-  
+
   .card {
     background: var(--color-card);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-xl);
     box-shadow: 0 6px 18px rgba(2, 6, 23, 0.15);
-    transition: box-shadow var(--motion-medium) var(--motion-easing),
+    transition:
+      box-shadow var(--motion-medium) var(--motion-easing),
       transform var(--motion-fast) var(--motion-easing);
   }
 
@@ -192,11 +194,11 @@ body {
     box-shadow: 0 8px 24px rgba(2, 6, 23, 0.25);
     transform: translateY(-2px);
   }
-  
+
   .gradient-primary {
     background: linear-gradient(135deg, var(--color-primary-1) 0%, var(--color-primary-2) 100%);
   }
-  
+
   .gradient-text {
     background: linear-gradient(135deg, var(--color-primary-1) 0%, var(--color-primary-2) 100%);
     -webkit-background-clip: text;
@@ -257,7 +259,7 @@ header nav a {
 
 /* Touch targets - minimum 44x44px */
 button,
-a[role="button"],
+a[role='button'],
 .touch-target {
   min-width: 44px;
   min-height: 44px;
@@ -371,6 +373,6 @@ section {
 }
 
 /* After JS loads, allow animations */
-html.js-loaded [style*="opacity: 0"] {
+html.js-loaded [style*='opacity: 0'] {
   /* Allow Framer Motion to control opacity */
 }

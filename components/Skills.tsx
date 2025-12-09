@@ -34,11 +34,7 @@ export function Skills() {
   const isInView = useInView(ref, { once: true, margin: '-100px' })
 
   return (
-    <section
-      id="skills"
-      ref={ref}
-      className="container mx-auto px-4 py-20"
-    >
+    <section id="skills" ref={ref} className="container mx-auto px-4 py-20">
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -94,4 +90,3 @@ export function Skills() {
     </section>
   )
 }
-

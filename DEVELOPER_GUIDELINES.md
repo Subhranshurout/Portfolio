@@ -9,18 +9,9 @@ This document outlines the design system, coding conventions, and best practices
 All spacing must use the 4px scale defined in CSS variables:
 
 ```css
---spacing-1: 4px
---spacing-2: 8px
---spacing-3: 12px
---spacing-4: 16px
---spacing-5: 20px
---spacing-6: 24px
---spacing-8: 32px
---spacing-10: 40px
---spacing-12: 48px
---spacing-16: 64px
---spacing-20: 80px
---spacing-24: 96px
+--spacing-1: 4px --spacing-2: 8px --spacing-3: 12px --spacing-4: 16px --spacing-5: 20px
+  --spacing-6: 24px --spacing-8: 32px --spacing-10: 40px --spacing-12: 48px --spacing-16: 64px
+  --spacing-20: 80px --spacing-24: 96px;
 ```
 
 **Never use hard-coded pixel values.** Always use CSS variables or Tailwind classes that map to these tokens.
@@ -28,17 +19,11 @@ All spacing must use the 4px scale defined in CSS variables:
 ### Typography Scale
 
 ```css
---font-size-xs: 0.75rem    /* 12px */
---font-size-sm: 0.875rem   /* 14px */
---font-size-base: 1rem      /* 16px */
---font-size-lg: 1.125rem    /* 18px */
---font-size-xl: 1.25rem     /* 20px */
---font-size-2xl: 1.5rem     /* 24px */
---font-size-3xl: 1.875rem   /* 30px */
---font-size-4xl: 2.25rem    /* 36px */
---font-size-5xl: 3rem       /* 48px */
---font-size-6xl: 3.75rem    /* 60px */
---font-size-7xl: 4.5rem     /* 72px */
+--font-size-xs: 0.75rem /* 12px */ --font-size-sm: 0.875rem /* 14px */ --font-size-base: 1rem
+  /* 16px */ --font-size-lg: 1.125rem /* 18px */ --font-size-xl: 1.25rem /* 20px */
+  --font-size-2xl: 1.5rem /* 24px */ --font-size-3xl: 1.875rem /* 30px */ --font-size-4xl: 2.25rem
+  /* 36px */ --font-size-5xl: 3rem /* 48px */ --font-size-6xl: 3.75rem /* 60px */
+  --font-size-7xl: 4.5rem /* 72px */;
 ```
 
 ### Colors
@@ -46,26 +31,17 @@ All spacing must use the 4px scale defined in CSS variables:
 All colors are defined as CSS variables with theme support:
 
 ```css
---color-bg: Background color
---color-card: Card background
---color-glass: Glassmorphism background
---color-accent: Accent color (#FFB86B)
---color-primary-1: Primary gradient start (#5B21B6)
---color-primary-2: Primary gradient end (#06B6D4)
---color-text-primary: Primary text color
---color-text-secondary: Secondary text color
---color-border: Border color
+--color-bg: Background color --color-card: Card background --color-glass: Glassmorphism background
+  --color-accent: Accent color (#ffb86b) --color-primary-1: Primary gradient start (#5b21b6)
+  --color-primary-2: Primary gradient end (#06b6d4) --color-text-primary: Primary text color
+  --color-text-secondary: Secondary text color --color-border: Border color;
 ```
 
 ### Border Radius
 
 ```css
---radius-sm: 4px
---radius-md: 8px
---radius-lg: 12px
---radius-xl: 16px
---radius-2xl: 24px
---radius-full: 9999px
+--radius-sm: 4px --radius-md: 8px --radius-lg: 12px --radius-xl: 16px --radius-2xl: 24px
+  --radius-full: 9999px;
 ```
 
 ## Motion Tokens
@@ -73,11 +49,11 @@ All colors are defined as CSS variables with theme support:
 All animations must use the centralized motion tokens from `lib/motionTokens.ts`:
 
 ```typescript
-motionTokens.duration.fast    // 180ms
-motionTokens.duration.medium  // 360ms
-motionTokens.duration.slow   // 600ms
+motionTokens.duration.fast // 180ms
+motionTokens.duration.medium // 360ms
+motionTokens.duration.slow // 600ms
 
-motionTokens.easing.default  // cubic-bezier(0.22, 0.9, 0.35, 1)
+motionTokens.easing.default // cubic-bezier(0.22, 0.9, 0.35, 1)
 ```
 
 ### Using Motion Tokens
@@ -184,11 +160,7 @@ export function Component({ title, children }: ComponentProps) {
 ### Example
 
 ```tsx
-<button
-  aria-label="Toggle theme"
-  aria-expanded={isOpen}
-  onClick={handleClick}
->
+<button aria-label="Toggle theme" aria-expanded={isOpen} onClick={handleClick}>
   <Icon aria-hidden="true" />
 </button>
 ```
@@ -246,7 +218,7 @@ npm run test
 ## Questions?
 
 Refer to:
+
 - [Next.js Documentation](https://nextjs.org/docs)
 - [Framer Motion Documentation](https://www.framer.com/motion/)
 - [WCAG Guidelines](https://www.w3.org/WAI/WCAG21/quickref/)
-

@@ -28,17 +28,11 @@ export function Projects() {
 
   const filters: Filter[] = ['All', 'iOS', 'Mobile']
   const filteredProjects =
-    filter === 'All'
-      ? projectsData
-      : projectsData.filter((p) => p.category === filter)
+    filter === 'All' ? projectsData : projectsData.filter(p => p.category === filter)
 
   return (
     <>
-      <section
-        id="projects"
-        ref={ref}
-        className="container mx-auto px-4 py-20"
-      >
+      <section id="projects" ref={ref} className="container mx-auto px-4 py-20">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -60,7 +54,7 @@ export function Projects() {
             animate={isInView ? { opacity: 1 } : {}}
             transition={{ delay: 0.3 }}
           >
-            {filters.map((f) => (
+            {filters.map(f => (
               <motion.button
                 key={f}
                 onClick={() => setFilter(f)}
@@ -102,7 +96,7 @@ export function Projects() {
                   onClick={() => setSelectedProject(project as unknown as Project)}
                   role="button"
                   tabIndex={0}
-                  onKeyDown={(e) => {
+                  onKeyDown={e => {
                     if (e.key === 'Enter' || e.key === ' ') {
                       e.preventDefault()
                       setSelectedProject(project as unknown as Project)
@@ -120,7 +114,7 @@ export function Projects() {
                     {project.description}
                   </p>
                   <div className="flex flex-wrap gap-2 mb-4">
-                    {project.tech.slice(0, 3).map((tech) => (
+                    {project.tech.slice(0, 3).map(tech => (
                       <span
                         key={tech}
                         className="px-2 sm:px-3 py-1 text-xs sm:text-sm glass rounded-full"
@@ -143,11 +137,7 @@ export function Projects() {
         </motion.div>
       </section>
 
-      <CaseStudyModal
-        project={selectedProject}
-        onClose={() => setSelectedProject(null)}
-      />
+      <CaseStudyModal project={selectedProject} onClose={() => setSelectedProject(null)} />
     </>
   )
 }
-

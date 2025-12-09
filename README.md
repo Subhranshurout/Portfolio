@@ -37,6 +37,7 @@ A modern, production-ready portfolio website built with Next.js, Tailwind CSS, a
 6. **Done!** Your site is live in 2-3 minutes
 
 ✅ **Free features included:**
+
 - Unlimited deployments
 - Automatic deployments on every git push
 - Free SSL certificate
@@ -52,17 +53,20 @@ A modern, production-ready portfolio website built with Next.js, Tailwind CSS, a
 ## 📦 Installation
 
 1. **Clone the repository:**
+
    ```bash
    git clone <repository-url>
    cd portfolio
    ```
 
 2. **Install dependencies:**
+
    ```bash
    npm install
    ```
 
 3. **Run the development server:**
+
    ```bash
    npm run dev
    ```
@@ -211,9 +215,9 @@ Edit CSS variables in `app/globals.css`:
 
 ```css
 :root {
-  --color-accent: #FFB86B;
-  --color-primary-1: #5B21B6;
-  --color-primary-2: #06B6D4;
+  --color-accent: #ffb86b;
+  --color-primary-1: #5b21b6;
+  --color-primary-2: #06b6d4;
 }
 ```
 
@@ -262,4 +266,5 @@ This project is open source and available under the MIT License.
 ---
 
 Built with ❤️ by Subhranshu Sekhar Rout
+
 # Portfolio

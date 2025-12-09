@@ -22,9 +22,9 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
       // Validate stored theme value
       const validThemes: Theme[] = ['light', 'dark']
       const isValidTheme = stored && validThemes.includes(stored)
-      
+
       const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
-      const initialTheme = isValidTheme ? stored : (prefersDark ? 'dark' : 'light')
+      const initialTheme = isValidTheme ? stored : prefersDark ? 'dark' : 'light'
       setTheme(initialTheme)
       document.documentElement.setAttribute('data-theme', initialTheme)
     } catch (error) {
@@ -52,11 +52,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   }
 
   // Always provide the context, even before mounting
-  return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      {children}
-    </ThemeContext.Provider>
-  )
+  return <ThemeContext.Provider value={{ theme, toggleTheme }}>{children}</ThemeContext.Provider>
 }
 
 export function useTheme() {
@@ -66,4 +62,3 @@ export function useTheme() {
   }
   return context
 }
-

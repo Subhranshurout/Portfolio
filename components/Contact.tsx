@@ -68,7 +68,7 @@ export function Contact() {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault()
-    
+
     // Honeypot check
     if (formData.honeypot) {
       return // Silent fail for bots
@@ -86,7 +86,7 @@ export function Contact() {
 
     setIsSubmitting(true)
     setSubmitStatus('idle')
-    setSubmitAttempts((prev) => prev + 1)
+    setSubmitAttempts(prev => prev + 1)
 
     try {
       // In production, replace with actual API endpoint
@@ -150,11 +150,7 @@ export function Contact() {
   ]
 
   return (
-    <section
-      id="contact"
-      ref={ref}
-      className="container mx-auto px-4 py-20 spacing-section"
-    >
+    <section id="contact" ref={ref} className="container mx-auto px-4 py-20 spacing-section">
       <motion.div
         className="max-w-4xl mx-auto"
         initial={{ opacity: 0, y: 50 }}
@@ -196,7 +192,9 @@ export function Contact() {
                   whileHover={prefersReducedMotion() ? {} : { scale: 1.05, x: 4 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <span className="text-xl sm:text-2xl" aria-hidden="true">{link.icon}</span>
+                  <span className="text-xl sm:text-2xl" aria-hidden="true">
+                    {link.icon}
+                  </span>
                   <span className="text-sm sm:text-base">{link.label}</span>
                 </motion.a>
               ))}
@@ -219,9 +217,7 @@ export function Contact() {
                 type="text"
                 name="website"
                 value={formData.honeypot}
-                onChange={(e) =>
-                  setFormData({ ...formData, honeypot: e.target.value })
-                }
+                onChange={e => setFormData({ ...formData, honeypot: e.target.value })}
                 className="hidden"
                 tabIndex={-1}
                 autoComplete="off"
@@ -234,14 +230,17 @@ export function Contact() {
                     htmlFor="name"
                     className="block text-sm font-medium mb-2 text-text-primary"
                   >
-                    Name <span className="text-error" aria-label="required">*</span>
+                    Name{' '}
+                    <span className="text-error" aria-label="required">
+                      *
+                    </span>
                   </label>
                   <input
                     type="text"
                     id="name"
                     required
                     value={formData.name}
-                    onChange={(e) => {
+                    onChange={e => {
                       setFormData({ ...formData, name: e.target.value })
                       if (errors.name) setErrors({ ...errors, name: undefined })
                     }}
@@ -264,14 +263,17 @@ export function Contact() {
                     htmlFor="email"
                     className="block text-sm font-medium mb-2 text-text-primary"
                   >
-                    Email <span className="text-error" aria-label="required">*</span>
+                    Email{' '}
+                    <span className="text-error" aria-label="required">
+                      *
+                    </span>
                   </label>
                   <input
                     type="email"
                     id="email"
                     required
                     value={formData.email}
-                    onChange={(e) => {
+                    onChange={e => {
                       setFormData({ ...formData, email: e.target.value })
                       if (errors.email) setErrors({ ...errors, email: undefined })
                     }}
@@ -294,14 +296,17 @@ export function Contact() {
                     htmlFor="subject"
                     className="block text-sm font-medium mb-2 text-text-primary"
                   >
-                    Subject <span className="text-error" aria-label="required">*</span>
+                    Subject{' '}
+                    <span className="text-error" aria-label="required">
+                      *
+                    </span>
                   </label>
                   <input
                     type="text"
                     id="subject"
                     required
                     value={formData.subject}
-                    onChange={(e) => {
+                    onChange={e => {
                       setFormData({ ...formData, subject: e.target.value })
                       if (errors.subject) setErrors({ ...errors, subject: undefined })
                     }}
@@ -324,14 +329,17 @@ export function Contact() {
                     htmlFor="message"
                     className="block text-sm font-medium mb-2 text-text-primary"
                   >
-                    Message <span className="text-error" aria-label="required">*</span>
+                    Message{' '}
+                    <span className="text-error" aria-label="required">
+                      *
+                    </span>
                   </label>
                   <textarea
                     id="message"
                     required
                     rows={5}
                     value={formData.message}
-                    onChange={(e) => {
+                    onChange={e => {
                       setFormData({ ...formData, message: e.target.value })
                       if (errors.message) setErrors({ ...errors, message: undefined })
                     }}
@@ -363,7 +371,10 @@ export function Contact() {
                 >
                   {isSubmitting ? (
                     <span className="flex items-center justify-center gap-2">
-                      <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" aria-hidden="true" />
+                      <span
+                        className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"
+                        aria-hidden="true"
+                      />
                       <span>Sending...</span>
                     </span>
                   ) : submitStatus === 'success' ? (

@@ -121,7 +121,7 @@ export function CaseStudyModal({ project, onClose }: CaseStudyModalProps) {
           exit={{ opacity: 0, scale: 0.95, y: 20 }}
           transition={getTransition('medium')}
           className="relative z-10 card max-w-4xl w-full max-h-[90vh] overflow-y-auto"
-          onClick={(e) => e.stopPropagation()}
+          onClick={e => e.stopPropagation()}
         >
           {/* Close button */}
           <button
@@ -145,7 +145,10 @@ export function CaseStudyModal({ project, onClose }: CaseStudyModalProps) {
               <span className="inline-block px-3 py-1.5 glass rounded-full text-xs sm:text-sm mb-4">
                 {project.category}
               </span>
-              <h2 id="modal-title" className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 gradient-text">
+              <h2
+                id="modal-title"
+                className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 gradient-text"
+              >
                 {project.title}
               </h2>
               <p className="text-base sm:text-lg text-text-secondary mb-4 leading-relaxed">
@@ -161,12 +164,8 @@ export function CaseStudyModal({ project, onClose }: CaseStudyModalProps) {
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 mb-6 sm:mb-8">
                 {Object.entries(project.metrics).map(([key, value]) => (
                   <div key={key} className="glass p-3 sm:p-4 rounded-lg text-center">
-                    <div className="text-xl sm:text-2xl font-bold text-accent mb-1">
-                      {value}
-                    </div>
-                    <div className="text-xs sm:text-sm text-text-secondary capitalize">
-                      {key}
-                    </div>
+                    <div className="text-xl sm:text-2xl font-bold text-accent mb-1">{value}</div>
+                    <div className="text-xs sm:text-sm text-text-secondary capitalize">{key}</div>
                   </div>
                 ))}
               </div>
@@ -195,11 +194,9 @@ export function CaseStudyModal({ project, onClose }: CaseStudyModalProps) {
 
             {/* Tech stack */}
             <div>
-              <h3 className="text-lg sm:text-xl font-bold mb-4 text-text-primary">
-                Tech Stack
-              </h3>
+              <h3 className="text-lg sm:text-xl font-bold mb-4 text-text-primary">Tech Stack</h3>
               <div className="flex flex-wrap gap-2">
-                {project.tech.map((tech) => (
+                {project.tech.map(tech => (
                   <span
                     key={tech}
                     className="px-3 sm:px-4 py-1.5 sm:py-2 gradient-primary text-white rounded-full text-xs sm:text-sm font-medium"

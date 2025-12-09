@@ -51,4 +51,3 @@ export function getTransition(
     ease: customEasing || motionTokens.easing.default,
   }
 }
-

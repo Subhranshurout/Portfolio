@@ -5,14 +5,17 @@ const rateLimitMap = new Map<string, { count: number; resetTime: number }>()
 
 // Cleanup old entries periodically to prevent memory leak
 if (typeof setInterval !== 'undefined') {
-  setInterval(() => {
-    const now = Date.now()
-    for (const [ip, limit] of rateLimitMap.entries()) {
-      if (now > limit.resetTime) {
-        rateLimitMap.delete(ip)
+  setInterval(
+    () => {
+      const now = Date.now()
+      for (const [ip, limit] of rateLimitMap.entries()) {
+        if (now > limit.resetTime) {
+          rateLimitMap.delete(ip)
+        }
       }
-    }
-  }, 60 * 60 * 1000) // Clean up every hour
+    },
+    60 * 60 * 1000
+  ) // Clean up every hour
 }
 
 function checkRateLimit(ip: string): boolean {
@@ -53,37 +56,25 @@ export async function POST(request: NextRequest) {
     try {
       body = await request.json()
     } catch (error) {
-      return NextResponse.json(
-        { error: 'Invalid request body' },
-        { status: 400 }
-      )
+      return NextResponse.json({ error: 'Invalid request body' }, { status: 400 })
     }
 
     const { name, email, subject, message, honeypot } = body
 
     // Honeypot check (silent fail for bots)
     if (honeypot) {
-      return NextResponse.json(
-        { message: 'Message sent successfully' },
-        { status: 200 }
-      )
+      return NextResponse.json({ message: 'Message sent successfully' }, { status: 200 })
     }
 
     // Validation
     if (!name || !email || !subject || !message) {
-      return NextResponse.json(
-        { error: 'All fields are required' },
-        { status: 400 }
-      )
+      return NextResponse.json({ error: 'All fields are required' }, { status: 400 })
     }
 
     // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
     if (!emailRegex.test(email)) {
-      return NextResponse.json(
-        { error: 'Invalid email address' },
-        { status: 400 }
-      )
+      return NextResponse.json({ error: 'Invalid email address' }, { status: 400 })
     }
 
     // Sanitize inputs (basic)
@@ -106,16 +97,9 @@ export async function POST(request: NextRequest) {
     //   text: `From: ${sanitized.name} (${sanitized.email})\n\n${sanitized.message}`,
     // })
 
-    return NextResponse.json(
-      { message: 'Message sent successfully' },
-      { status: 200 }
-    )
+    return NextResponse.json({ message: 'Message sent successfully' }, { status: 200 })
   } catch (error) {
     console.error('Contact form error:', error)
-    return NextResponse.json(
-      { error: 'Internal server error' },
-      { status: 500 }
-    )
+    return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
   }
 }
-

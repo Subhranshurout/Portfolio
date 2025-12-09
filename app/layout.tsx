@@ -11,7 +11,8 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: 'Subhranshu Sekhar Rout | iOS Developer Portfolio',
-  description: 'iOS Developer specializing in Swift, SwiftUI, and UIKit. Building scalable, modern Apple ecosystem apps.',
+  description:
+    'iOS Developer specializing in Swift, SwiftUI, and UIKit. Building scalable, modern Apple ecosystem apps.',
   keywords: ['iOS Developer', 'Swift', 'SwiftUI', 'UIKit', 'Mobile Development'],
   authors: [{ name: 'Subhranshu Sekhar Rout' }],
   openGraph: {
@@ -51,11 +52,7 @@ const structuredData = {
   },
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>

@@ -15,11 +15,7 @@ export function Education() {
   ]
 
   return (
-    <section
-      id="education"
-      ref={ref}
-      className="container mx-auto px-4 py-20"
-    >
+    <section id="education" ref={ref} className="container mx-auto px-4 py-20">
       <motion.div
         className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8"
         initial={{ opacity: 0, y: 50 }}
@@ -86,4 +82,3 @@ export function Education() {
     </section>
   )
 }
-

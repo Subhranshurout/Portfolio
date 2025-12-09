@@ -29,6 +29,7 @@ E2E tests currently have a compatibility issue with Node.js v25+ due to `Transfo
 **Option 1: Run E2E tests manually (Recommended for now)**
 
 1. Start the dev server in one terminal:
+
    ```bash
    npm run dev
    ```
@@ -41,6 +42,7 @@ E2E tests currently have a compatibility issue with Node.js v25+ due to `Transfo
 **Option 2: Use Node.js v18 or v20**
 
 If you need E2E tests to run automatically, consider using Node.js v18 or v20:
+
 ```bash
 nvm install 18
 nvm use 18
@@ -80,12 +82,14 @@ There are 3 high severity vulnerabilities in transitive dependencies (Next.js ES
 ### Monitoring
 
 Run `npm audit` periodically to check for updates. The vulnerabilities will be resolved when:
+
 - Next.js updates to a version with fixed dependencies
 - Or we upgrade to Next.js 15+ (when stable)
 
 ## CI/CD
 
 GitHub Actions CI runs:
+
 - ✅ Linting
 - ✅ Format checking
 - ✅ Type checking
@@ -116,4 +120,3 @@ e2e/
 - Jest docs: https://jestjs.io/docs/getting-started
 - React Testing Library: https://testing-library.com/react
 - Playwright: https://playwright.dev
-

@@ -55,4 +55,3 @@ export function getHeaderHeight(): number {
   if (window.innerWidth >= 768) return 56
   return 48
 }
-

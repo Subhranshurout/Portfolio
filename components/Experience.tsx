@@ -16,11 +16,7 @@ export function Experience() {
   ]
 
   return (
-    <section
-      id="experience"
-      ref={ref}
-      className="container mx-auto px-4 py-20"
-    >
+    <section id="experience" ref={ref} className="container mx-auto px-4 py-20">
       <motion.div
         className="max-w-4xl mx-auto"
         initial={{ opacity: 0, y: 50 }}
@@ -49,12 +45,10 @@ export function Experience() {
             📍 Ahmedabad, India | Feb 2023 – Present
           </p>
           <p className="text-text-secondary mb-6">
-            At Yudiz Solutions, I am responsible for the end-to-end development
-            of native iOS applications.
+            At Yudiz Solutions, I am responsible for the end-to-end development of native iOS
+            applications.
           </p>
-          <h4 className="text-xl font-semibold mb-4 text-text-primary">
-            Core Responsibilities:
-          </h4>
+          <h4 className="text-xl font-semibold mb-4 text-text-primary">Core Responsibilities:</h4>
           <ul className="space-y-3">
             {responsibilities.map((item, index) => (
               <motion.li
@@ -77,4 +71,3 @@ export function Experience() {
     </section>
   )
 }
-

@@ -32,11 +32,7 @@ export function Highlights() {
   const isInView = useInView(ref, { once: true, margin: '-100px' })
 
   return (
-    <section
-      id="highlights"
-      ref={ref}
-      className="container mx-auto px-4 py-20"
-    >
+    <section id="highlights" ref={ref} className="container mx-auto px-4 py-20">
       <motion.div
         className="card p-8 md:p-12 max-w-4xl mx-auto"
         initial={{ opacity: 0, y: 50 }}
@@ -57,9 +53,9 @@ export function Highlights() {
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ delay: 0.3 }}
         >
-          An enthusiastic and detail-oriented iOS Developer with hands-on
-          experience in crafting native iOS applications for consumer,
-          entertainment, parental control, and e-commerce domains.
+          An enthusiastic and detail-oriented iOS Developer with hands-on experience in crafting
+          native iOS applications for consumer, entertainment, parental control, and e-commerce
+          domains.
         </motion.p>
         <div className="flex flex-wrap gap-4">
           {highlights.map((highlight, index) => (
@@ -76,9 +72,7 @@ export function Highlights() {
               whileHover={{ scale: 1.05, y: -2 }}
             >
               <span className="text-2xl">{highlight.icon}</span>
-              <span className="text-sm font-medium text-text-primary">
-                {highlight.text}
-              </span>
+              <span className="text-sm font-medium text-text-primary">{highlight.text}</span>
             </motion.div>
           ))}
         </div>
@@ -86,4 +80,3 @@ export function Highlights() {
     </section>
   )
 }
-

@@ -3,11 +3,13 @@
 ## First Time Setup
 
 1. **Install dependencies:**
+
    ```bash
    npm install
    ```
 
 2. **Run development server:**
+
    ```bash
    npm run dev
    ```
@@ -47,11 +49,13 @@ npm start
 ## Deployment Options
 
 ### Vercel (Recommended)
+
 1. Push to GitHub
 2. Import on [vercel.com](https://vercel.com)
 3. Auto-deploys on push
 
 ### Netlify
+
 1. Build command: `npm run build`
 2. Publish directory: `.next`
 3. Deploy!
@@ -61,4 +65,3 @@ npm start
 - The old `index.html` and `style.css` files are preserved but not used by Next.js
 - You can delete them after confirming the new site works
 - All animations respect `prefers-reduced-motion` for accessibility
-

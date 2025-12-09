@@ -33,4 +33,3 @@ export function ThemeToggle() {
     </motion.button>
   )
 }
-

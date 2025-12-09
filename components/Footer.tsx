@@ -16,15 +16,12 @@ export function Footer() {
           transition={{ duration: 0.6 }}
         >
           <p className="mb-4">
-            &copy; {currentYear} Subhranshu Sekhar Rout. Built with Next.js,
-            Tailwind CSS & Framer Motion.
+            &copy; {currentYear} Subhranshu Sekhar Rout. Built with Next.js, Tailwind CSS & Framer
+            Motion.
           </p>
-          <p className="text-sm">
-            Crafted with attention to detail and a passion for clean code.
-          </p>
+          <p className="text-sm">Crafted with attention to detail and a passion for clean code.</p>
         </motion.div>
       </div>
     </footer>
   )
 }
-

@@ -17,7 +17,7 @@ export function Hero() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentKeyword((prev) => (prev + 1) % keywords.length)
+      setCurrentKeyword(prev => (prev + 1) % keywords.length)
     }, 2000)
     return () => clearInterval(interval)
   }, [])
@@ -70,7 +70,7 @@ export function Hero() {
   }
 
   return (
-    <section 
+    <section
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
       style={{ paddingTop: 'var(--header-height-mobile)' }}
     >
@@ -129,11 +129,9 @@ export function Hero() {
               lineHeight: 'var(--line-height-tight)',
             }}
           >
-            Hi — I'm{' '}
-            <span className="gradient-text">Subhranshu</span>.
+            Hi — I'm <span className="gradient-text">Subhranshu</span>.
             <br className="hidden sm:block" />
-            <span className="sm:hidden"> </span>
-            I build delightful{' '}
+            <span className="sm:hidden"> </span>I build delightful{' '}
             <motion.span
               key={currentKeyword}
               initial={{ opacity: 0, y: prefersReducedMotion() ? 0 : 20 }}
@@ -155,8 +153,8 @@ export function Hero() {
               lineHeight: 'var(--line-height-relaxed)',
             }}
           >
-            iOS developer focused on clean architecture, delightful interactions,
-            and production-grade apps.
+            iOS developer focused on clean architecture, delightful interactions, and
+            production-grade apps.
           </motion.p>
 
           <motion.div
