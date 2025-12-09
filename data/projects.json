@@ -1,0 +1,74 @@
+[
+  {
+    "id": "safecircle",
+    "title": "SafeCircle — Parental Control App",
+    "category": "iOS",
+    "role": "Lead iOS Developer",
+    "tech": ["SwiftUI", "Core Location", "Family Controls", "REST APIs"],
+    "description": "An advanced parental control application enabling parents to monitor and manage their child's iPhone usage.",
+    "highlights": [
+      "Developed the entire parental control ecosystem using SwiftUI",
+      "Integrated Family Controls for managing restrictions (app/web blocking, screen time)",
+      "Implemented real-time tracking using Core Location and geofencing alerts"
+    ],
+    "metrics": {
+      "downloads": "10k+",
+      "rating": "4.5"
+    },
+    "image": "/images/safecircle.jpg"
+  },
+  {
+    "id": "jojo-ott",
+    "title": "JOJO OTT — Gujarati Entertainment Platform",
+    "category": "iOS",
+    "role": "iOS Developer (Events & Auth Modules)",
+    "tech": ["Swift", "Xcode", "AVFoundation"],
+    "description": "A premium regional entertainment platform offering 1000+ hours of movies, shows, and events.",
+    "highlights": [
+      "Revamped UI/UX of Events Module and integrated ticket booking flow",
+      "Implemented state management and API integration in the critical Auth Module",
+      "Managed project workflows and coordinated with multi-functional teams"
+    ],
+    "metrics": {
+      "users": "50k+",
+      "content": "1000+ hours"
+    },
+    "image": "/images/jojo-ott.jpg"
+  },
+  {
+    "id": "fancall",
+    "title": "FanCall — Video Calling Platform",
+    "category": "iOS",
+    "role": "iOS Developer",
+    "tech": ["Swift", "UIKit"],
+    "description": "A social platform enabling creators to connect with followers through secure, one-on-one video calls.",
+    "highlights": [
+      "Implemented video calling workflows and built scheduling & authentication modules",
+      "Ensured smooth, low-latency calling experience through optimized handling"
+    ],
+    "metrics": {
+      "calls": "5k+",
+      "creators": "500+"
+    },
+    "image": "/images/fancall.jpg"
+  },
+  {
+    "id": "andalus",
+    "title": "Andalus — Electronics E-Commerce App",
+    "category": "iOS",
+    "role": "iOS Developer",
+    "tech": ["UIKit", "Apple Pay", "Ottu API"],
+    "description": "An e-commerce application for browsing and purchasing electronic products.",
+    "highlights": [
+      "Structured end-to-end user flow from search to checkout",
+      "Integrated secure payment with Apple Pay using the Ottu API",
+      "Designed modern e-commerce UI interactions using UIKit"
+    ],
+    "metrics": {
+      "products": "10k+",
+      "transactions": "1k+"
+    },
+    "image": "/images/andalus.jpg"
+  }
+]
+
