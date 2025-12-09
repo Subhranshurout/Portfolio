@@ -33,14 +33,16 @@ describe('Header', () => {
   it('renders theme toggle', () => {
     renderWithProviders(<Header />)
     
-    const themeToggle = screen.getByRole('button', { name: /Switch to/i })
-    expect(themeToggle).toBeInTheDocument()
+    // There are multiple theme toggles (desktop and mobile), so use getAllByRole
+    const themeToggles = screen.getAllByRole('button', { name: /Switch to/i })
+    expect(themeToggles.length).toBeGreaterThan(0)
   })
 
   it('renders hire me button', () => {
     renderWithProviders(<Header />)
     
-    const hireMeButton = screen.getByText('Hire Me')
-    expect(hireMeButton).toBeInTheDocument()
+    // There are multiple "Hire Me" buttons (desktop and mobile), so use getAllByText
+    const hireMeButtons = screen.getAllByText('Hire Me')
+    expect(hireMeButtons.length).toBeGreaterThan(0)
   })
 })
