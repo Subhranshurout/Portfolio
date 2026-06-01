@@ -1,73 +1,99 @@
 [
   {
     "id": "safecircle",
-    "title": "SafeCircle — Parental Control App",
+    "title": "SafeCircle — Parental Control Platform",
     "category": "iOS",
     "role": "Lead iOS Developer",
-    "tech": ["SwiftUI", "Core Location", "Family Controls", "REST APIs"],
-    "description": "An advanced parental control application enabling parents to monitor and manage their child's iPhone usage.",
+    "thumbnail": { "abbr": "SC", "label": "Parental Control" },
+    "tech": [
+      "SwiftUI",
+      "Family Controls",
+      "Managed Settings",
+      "Device Activity",
+      "Core Location",
+      "Push Notifications"
+    ],
+    "description": "Comprehensive parental control ecosystem to monitor, restrict, and manage child device telemetry and application access securely.",
     "highlights": [
-      "Developed the entire parental control ecosystem using SwiftUI",
-      "Integrated Family Controls for managing restrictions (app/web blocking, screen time)",
-      "Implemented real-time tracking using Core Location and geofencing alerts"
+      "Implemented Apple's Family Controls, Managed Settings, and Device Activity frameworks for system-level app and website blocking",
+      "Architected background location-tracking and geofencing alert infrastructure with Core Location, optimized for minimal battery drain",
+      "Built a security module to detect active VPN connections and route remote push updates to the parent administrative app"
     ],
     "metrics": {
-      "downloads": "10k+",
-      "rating": "4.5"
-    },
-    "image": "/images/safecircle.jpg"
+      "scope": "End-to-end",
+      "focus": "System controls"
+    }
+  },
+  {
+    "id": "patientgo",
+    "title": "PatientGO — Clinical Healthcare Platform",
+    "category": "iOS",
+    "role": "iOS Developer",
+    "thumbnail": { "abbr": "PG", "label": "Healthcare" },
+    "tech": ["UIKit", "SwiftUI", "Azure Communication Services", "REST APIs", "Offline Sync"],
+    "description": "HIPAA-aligned patient engagement and clinical trial tracking with hybrid UIKit/SwiftUI architecture and real-time telehealth.",
+    "highlights": [
+      "Integrated Azure Communication Services SDK for low-latency one-on-one audio and video consultations between patients and physicians",
+      "Designed state-driven eDiary modules and expense reimbursement workflows with offline-to-cloud sync via robust queue handling",
+      "Engineered secure data flows and hybrid UI patterns for regulated healthcare environments"
+    ],
+    "metrics": {
+      "compliance": "HIPAA-focused",
+      "modules": "Telehealth"
+    }
   },
   {
     "id": "jojo-ott",
-    "title": "JOJO OTT — Gujarati Entertainment Platform",
+    "title": "JOJO OTT — Regional Video Streaming",
     "category": "iOS",
-    "role": "iOS Developer (Events & Auth Modules)",
-    "tech": ["Swift", "Xcode", "AVFoundation"],
-    "description": "A premium regional entertainment platform offering 1000+ hours of movies, shows, and events.",
+    "role": "iOS Developer (Events & Ticketing)",
+    "thumbnail": { "abbr": "JO", "label": "OTT / Media" },
+    "tech": ["Swift", "UIKit", "AVFoundation", "REST APIs"],
+    "description": "High-traffic regional entertainment platform with native Events and Ticketing, dynamic reservations, and optimized media playback.",
     "highlights": [
-      "Revamped UI/UX of Events Module and integrated ticket booking flow",
-      "Implemented state management and API integration in the critical Auth Module",
-      "Managed project workflows and coordinated with multi-functional teams"
+      "Architected the native Events and Ticketing module with dynamic seat reservations, real-time ticket states, and secure local receipt processing",
+      "Engineered customized playback with AVFoundation—trailer previews, background audio state, and optimized asset caching",
+      "Delivered responsive layouts and backward-compatible UI for a content-heavy OTT experience"
     ],
     "metrics": {
-      "users": "50k+",
-      "content": "1000+ hours"
-    },
-    "image": "/images/jojo-ott.jpg"
+      "content": "1000+ hrs",
+      "module": "Events"
+    }
   },
   {
     "id": "fancall",
-    "title": "FanCall — Video Calling Platform",
+    "title": "FanCall — Creator Engagement",
     "category": "iOS",
     "role": "iOS Developer",
-    "tech": ["Swift", "UIKit"],
-    "description": "A social platform enabling creators to connect with followers through secure, one-on-one video calls.",
+    "thumbnail": { "abbr": "FC", "label": "Real-Time" },
+    "tech": ["Swift", "UIKit", "WebSockets", "REST APIs"],
+    "description": "Social platform for secure, real-time video consultations among creators, brands, and subscribers.",
     "highlights": [
-      "Implemented video calling workflows and built scheduling & authentication modules",
-      "Ensured smooth, low-latency calling experience through optimized handling"
+      "Built custom video call orchestration—call states, scheduling hooks, authentication, and session lifecycle management",
+      "Implemented real-time interactive commenting via WebSockets alongside REST-driven profile and booking flows",
+      "Optimized call setup and state transitions for low-latency creator–subscriber engagement"
     ],
     "metrics": {
-      "calls": "5k+",
-      "creators": "500+"
-    },
-    "image": "/images/fancall.jpg"
+      "realtime": "WebSockets",
+      "domain": "RTC"
+    }
   },
   {
     "id": "andalus",
-    "title": "Andalus — Electronics E-Commerce App",
+    "title": "Andalus — Electronics E-Commerce",
     "category": "iOS",
     "role": "iOS Developer",
-    "tech": ["UIKit", "Apple Pay", "Ottu API"],
-    "description": "An e-commerce application for browsing and purchasing electronic products.",
+    "thumbnail": { "abbr": "AN", "label": "E-Commerce" },
+    "tech": ["UIKit", "Apple Pay", "Ottu API", "REST APIs"],
+    "description": "Native e-commerce app for browsing and purchasing electronics with secure checkout and modern UIKit interactions.",
     "highlights": [
-      "Structured end-to-end user flow from search to checkout",
-      "Integrated secure payment with Apple Pay using the Ottu API",
-      "Designed modern e-commerce UI interactions using UIKit"
+      "Structured end-to-end user flow from search and product detail through cart to checkout",
+      "Integrated secure payments with Apple Pay using the Ottu payment API",
+      "Designed polished e-commerce UI patterns—filters, wishlists, and order tracking—with UIKit"
     ],
     "metrics": {
-      "products": "10k+",
-      "transactions": "1k+"
-    },
-    "image": "/images/andalus.jpg"
+      "catalog": "10k+ SKUs",
+      "payments": "Apple Pay"
+    }
   }
 ]

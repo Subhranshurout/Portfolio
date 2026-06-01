@@ -1,0 +1,64 @@
+[
+  {
+    "category": "Languages",
+    "items": ["Swift", "Objective-C (Familiar)"]
+  },
+  {
+    "category": "Frameworks & Core iOS",
+    "items": [
+      "SwiftUI",
+      "UIKit",
+      "Foundation",
+      "Combine",
+      "Core Data",
+      "Core Animation",
+      "AVFoundation",
+      "Core Location"
+    ]
+  },
+  {
+    "category": "Specialized Apple Kits",
+    "items": [
+      "Family Controls",
+      "Managed Settings",
+      "Device Activity",
+      "StoreKit",
+      "Screen Time API"
+    ]
+  },
+  {
+    "category": "Architecture & Patterns",
+    "items": [
+      "MVVM",
+      "Clean Architecture",
+      "Repository Pattern",
+      "Dependency Injection",
+      "Modular Architecture"
+    ]
+  },
+  {
+    "category": "Concurrency & Networking",
+    "items": [
+      "Swift Concurrency (Async/Await)",
+      "GCD",
+      "Operation Queues",
+      "URLSession",
+      "RESTful APIs",
+      "WebSockets",
+      "JSON"
+    ]
+  },
+  {
+    "category": "Tools & Ecosystem",
+    "items": [
+      "Xcode",
+      "Git",
+      "GitHub",
+      "App Store Connect",
+      "TestFlight",
+      "Firebase",
+      "Azure Communication SDK",
+      "Jira"
+    ]
+  }
+]
