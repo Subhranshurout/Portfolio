@@ -57,10 +57,16 @@ export function Projects() {
                   <ProjectThumbnail abbr={project.thumbnail.abbr} label={project.thumbnail.label} />
                 </div>
                 <div className="card-body">
-                  <p className="project-card__category text-xs font-medium uppercase tracking-widest" style={{ color: 'var(--text-tertiary)' }}>
+                  <p
+                    className="project-card__category text-xs font-medium uppercase tracking-widest"
+                    style={{ color: 'var(--text-tertiary)' }}
+                  >
                     {project.category}
                   </p>
-                  <h3 className="project-card__title text-lg font-semibold tracking-tight" style={{ color: 'var(--text-primary)' }}>
+                  <h3
+                    className="project-card__title text-lg font-semibold tracking-tight"
+                    style={{ color: 'var(--text-primary)' }}
+                  >
                     {project.title}
                   </h3>
                   <p className="project-card__description">{project.description}</p>
@@ -69,7 +75,12 @@ export function Projects() {
                     style={{ color: 'var(--text-primary)' }}
                   >
                     View case study
-                    <span aria-hidden className="inline-block transition-transform duration-300 group-hover:translate-x-0.5">→</span>
+                    <span
+                      aria-hidden
+                      className="inline-block transition-transform duration-300 group-hover:translate-x-0.5"
+                    >
+                      →
+                    </span>
                   </span>
                 </div>
               </StaggerItem>

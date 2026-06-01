@@ -91,13 +91,24 @@ export function CaseStudyModal({ project, onClose }: CaseStudyModalProps) {
             ×
           </button>
 
-          <ProjectThumbnail abbr={project.thumbnail.abbr} label={project.thumbnail.label} size="lg" />
+          <ProjectThumbnail
+            abbr={project.thumbnail.abbr}
+            label={project.thumbnail.label}
+            size="lg"
+          />
 
           <div className="p-6 md:p-8">
-            <p className="text-xs font-semibold uppercase tracking-widest mb-2" style={{ color: 'var(--text-tertiary)' }}>
+            <p
+              className="text-xs font-semibold uppercase tracking-widest mb-2"
+              style={{ color: 'var(--text-tertiary)' }}
+            >
               {project.category}
             </p>
-            <h2 id="modal-title" className="text-2xl font-semibold tracking-tight mb-3" style={{ color: 'var(--text-primary)' }}>
+            <h2
+              id="modal-title"
+              className="text-2xl font-semibold tracking-tight mb-3"
+              style={{ color: 'var(--text-primary)' }}
+            >
               {project.title}
             </h2>
             <p className="text-base mb-2" style={{ color: 'var(--text-secondary)' }}>
@@ -110,11 +121,18 @@ export function CaseStudyModal({ project, onClose }: CaseStudyModalProps) {
             {project.metrics && (
               <div className="grid grid-cols-2 gap-3 mb-6">
                 {Object.entries(project.metrics).map(([key, value]) => (
-                  <div key={key} className="p-3 rounded-lg text-center" style={{ background: 'var(--bg-secondary)' }}>
+                  <div
+                    key={key}
+                    className="p-3 rounded-lg text-center"
+                    style={{ background: 'var(--bg-secondary)' }}
+                  >
                     <div className="text-sm font-semibold" style={{ color: 'var(--text-primary)' }}>
                       {value}
                     </div>
-                    <div className="text-xs capitalize mt-0.5" style={{ color: 'var(--text-tertiary)' }}>
+                    <div
+                      className="text-xs capitalize mt-0.5"
+                      style={{ color: 'var(--text-tertiary)' }}
+                    >
                       {key}
                     </div>
                   </div>
@@ -122,19 +140,32 @@ export function CaseStudyModal({ project, onClose }: CaseStudyModalProps) {
               </div>
             )}
 
-            <h3 className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: 'var(--text-tertiary)' }}>
+            <h3
+              className="text-sm font-semibold uppercase tracking-widest mb-3"
+              style={{ color: 'var(--text-tertiary)' }}
+            >
               Highlights
             </h3>
             <ul className="space-y-3 mb-8">
               {project.highlights.map((highlight, index) => (
-                <li key={index} className="flex gap-3 text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-                  <span className="mt-2 w-1 h-1 rounded-full flex-shrink-0" style={{ background: 'var(--text-primary)' }} />
+                <li
+                  key={index}
+                  className="flex gap-3 text-sm leading-relaxed"
+                  style={{ color: 'var(--text-secondary)' }}
+                >
+                  <span
+                    className="mt-2 w-1 h-1 rounded-full flex-shrink-0"
+                    style={{ background: 'var(--text-primary)' }}
+                  />
                   {highlight}
                 </li>
               ))}
             </ul>
 
-            <h3 className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: 'var(--text-tertiary)' }}>
+            <h3
+              className="text-sm font-semibold uppercase tracking-widest mb-3"
+              style={{ color: 'var(--text-tertiary)' }}
+            >
               Tech stack
             </h3>
             <div className="flex flex-wrap gap-2">

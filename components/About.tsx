@@ -20,16 +20,37 @@ export function About() {
   const animate = hydrated && !reduced
 
   return (
-    <section id="about" ref={ref} className="spacing-section gradient-bg-section border-b" style={{ borderColor: 'var(--border-subtle)' }}>
+    <section
+      id="about"
+      ref={ref}
+      className="spacing-section gradient-bg-section border-b"
+      style={{ borderColor: 'var(--border-subtle)' }}
+    >
       <div className="container mx-auto">
         <FadeIn className="max-w-3xl">
           <SectionHeader label="About" title="Professional summary" />
 
-          <div className="prose-block text-base md:text-lg leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+          <div
+            className="prose-block text-base md:text-lg leading-relaxed"
+            style={{ color: 'var(--text-secondary)' }}
+          >
             {[
-              <>iOS developer with <strong style={{ color: 'var(--text-primary)', fontWeight: 600 }}>3+ years</strong> of experience architecting and shipping production-grade native applications. Deep work across Swift, SwiftUI, and UIKit in regulated healthcare, system parental controls, OTT streaming, and RTC products.</>,
-              <>I focus on clean architecture (MVVM, modular layers), Swift Concurrency, and measurable performance — Instruments profiling, memory discipline, and fast launch times for real users.</>,
-              <>Based in Ahmedabad, India. I own delivery from technical design through TestFlight and App Store Connect, working closely with product, design, and backend teams.</>,
+              <>
+                iOS developer with{' '}
+                <strong style={{ color: 'var(--text-primary)', fontWeight: 600 }}>3+ years</strong>{' '}
+                of experience architecting and shipping production-grade native applications. Deep
+                work across Swift, SwiftUI, and UIKit in regulated healthcare, system parental
+                controls, OTT streaming, and RTC products.
+              </>,
+              <>
+                I focus on clean architecture (MVVM, modular layers), Swift Concurrency, and
+                measurable performance — Instruments profiling, memory discipline, and fast launch
+                times for real users.
+              </>,
+              <>
+                Based in Ahmedabad, India. I own delivery from technical design through TestFlight
+                and App Store Connect, working closely with product, design, and backend teams.
+              </>,
             ].map((paragraph, index) => (
               <motion.p
                 key={index}

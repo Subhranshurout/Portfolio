@@ -146,14 +146,21 @@ body {
   overflow-x: hidden;
   background-color: var(--bg);
   color: var(--text-primary);
-  font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display',
-    system-ui, sans-serif;
+  font-family:
+    var(--font-sans),
+    -apple-system,
+    BlinkMacSystemFont,
+    'SF Pro Text',
+    'SF Pro Display',
+    system-ui,
+    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   line-height: 1.5;
   letter-spacing: -0.015em;
-  transition: background-color var(--motion-medium) var(--motion-easing),
+  transition:
+    background-color var(--motion-medium) var(--motion-easing),
     color var(--motion-medium) var(--motion-easing);
 }
 
@@ -175,7 +182,9 @@ body {
     border-radius: var(--radius-lg);
     border: 1px solid var(--border-medium);
     box-shadow: none;
-    transition: border-color var(--motion-fast), background-color var(--motion-fast);
+    transition:
+      border-color var(--motion-fast),
+      background-color var(--motion-fast);
   }
 
   [data-theme='light'] .card {
@@ -206,7 +215,9 @@ body {
 
   /* Prevent grid/flex children from stretching to match taller siblings */
   .card--interactive {
-    transition: border-color 0.25s ease, background-color 0.25s ease;
+    transition:
+      border-color 0.25s ease,
+      background-color 0.25s ease;
   }
 
   .card--natural {
@@ -237,7 +248,9 @@ body {
     background: var(--accent);
     color: var(--bg-elevated);
     border: 1px solid var(--accent);
-    transition: background var(--motion-fast), border-color var(--motion-fast);
+    transition:
+      background var(--motion-fast),
+      border-color var(--motion-fast);
   }
 
   [data-theme='light'] .btn-primary {
@@ -258,7 +271,9 @@ body {
     background: var(--bg-elevated);
     color: var(--text-primary);
     border: 1px solid var(--border-medium);
-    transition: background var(--motion-fast), border-color var(--motion-fast);
+    transition:
+      background var(--motion-fast),
+      border-color var(--motion-fast);
   }
 
   .btn-secondary:hover {
@@ -620,7 +635,9 @@ body {
     background: var(--bg-elevated);
     border: 1px solid var(--border-medium);
     border-radius: var(--radius-md);
-    transition: border-color var(--motion-fast), color var(--motion-fast);
+    transition:
+      border-color var(--motion-fast),
+      color var(--motion-fast);
     word-break: break-word;
   }
 
@@ -656,7 +673,9 @@ body {
     border: 1px solid var(--border-medium);
     border-radius: var(--radius-md);
     outline: none;
-    transition: border-color var(--motion-fast), box-shadow var(--motion-fast);
+    transition:
+      border-color var(--motion-fast),
+      box-shadow var(--motion-fast);
   }
 
   .input-field--textarea {

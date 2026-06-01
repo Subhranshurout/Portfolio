@@ -7,14 +7,7 @@ export const metadata: Metadata = {
   title: 'Subhranshu Sekhar Rout | iOS Developer',
   description:
     'iOS Developer with 3+ years building production apps in Parental Control, Healthcare, OTT, E-Commerce, and RTC. Swift, SwiftUI, UIKit.',
-  keywords: [
-    'iOS Developer',
-    'Swift',
-    'SwiftUI',
-    'UIKit',
-    'Mobile Development',
-    'Ahmedabad',
-  ],
+  keywords: ['iOS Developer', 'Swift', 'SwiftUI', 'UIKit', 'Mobile Development', 'Ahmedabad'],
   authors: [{ name: 'Subhranshu Sekhar Rout' }],
   openGraph: {
     title: 'Subhranshu Sekhar Rout | iOS Developer',
@@ -61,7 +54,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           }}
         />
       </head>
-      <body style={{ fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif' }}>
+      <body
+        style={{
+          fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif',
+        }}
+      >
         <script
           dangerouslySetInnerHTML={{
             __html: `document.documentElement.classList.add('js-loaded');`,

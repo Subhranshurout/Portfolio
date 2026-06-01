@@ -4,12 +4,15 @@ import { buildMailtoUrl, sendContactEmail } from '@/lib/email'
 const rateLimitMap = new Map<string, { count: number; resetTime: number }>()
 
 if (typeof setInterval !== 'undefined') {
-  setInterval(() => {
-    const now = Date.now()
-    for (const [ip, limit] of rateLimitMap.entries()) {
-      if (now > limit.resetTime) rateLimitMap.delete(ip)
-    }
-  }, 60 * 60 * 1000)
+  setInterval(
+    () => {
+      const now = Date.now()
+      for (const [ip, limit] of rateLimitMap.entries()) {
+        if (now > limit.resetTime) rateLimitMap.delete(ip)
+      }
+    },
+    60 * 60 * 1000
+  )
 }
 
 function checkRateLimit(ip: string): boolean {
@@ -34,7 +37,10 @@ export async function POST(request: NextRequest) {
       'unknown'
 
     if (!checkRateLimit(ip)) {
-      return NextResponse.json({ error: 'Too many requests. Please try again later.' }, { status: 429 })
+      return NextResponse.json(
+        { error: 'Too many requests. Please try again later.' },
+        { status: 429 }
+      )
     }
 
     let body: Record<string, string>

@@ -60,7 +60,10 @@ export function Education() {
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ delay: 0.35 + index * 0.05 }}
                 >
-                  <h3 className="text-sm font-bold uppercase tracking-wide mb-2" style={{ color: 'var(--accent)' }}>
+                  <h3
+                    className="text-sm font-bold uppercase tracking-wide mb-2"
+                    style={{ color: 'var(--accent)' }}
+                  >
                     {group.category}
                   </h3>
                   <p className="text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>

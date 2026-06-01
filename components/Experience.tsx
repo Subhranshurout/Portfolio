@@ -25,7 +25,12 @@ export function Experience() {
   const animate = hydrated && !reduced
 
   return (
-    <section id="experience" ref={ref} className="spacing-section" style={{ backgroundColor: 'var(--bg)' }}>
+    <section
+      id="experience"
+      ref={ref}
+      className="spacing-section"
+      style={{ backgroundColor: 'var(--bg)' }}
+    >
       <div className="container mx-auto max-w-3xl">
         <FadeIn>
           <SectionHeader label="Experience" title="Professional experience" />
@@ -43,19 +48,32 @@ export function Experience() {
               />
             </motion.div>
 
-            <motion.div variants={fadeUp} initial={animate ? 'hidden' : false} animate={animate && isInView ? 'visible' : false}>
-              <p className="text-xs font-semibold uppercase tracking-widest mb-2" style={{ color: 'var(--text-tertiary)' }}>
+            <motion.div
+              variants={fadeUp}
+              initial={animate ? 'hidden' : false}
+              animate={animate && isInView ? 'visible' : false}
+            >
+              <p
+                className="text-xs font-semibold uppercase tracking-widest mb-2"
+                style={{ color: 'var(--text-tertiary)' }}
+              >
                 Feb 2023 — Present
               </p>
-              <h3 className="text-xl font-semibold tracking-tight mb-1" style={{ color: 'var(--text-primary)' }}>
+              <h3
+                className="text-xl font-semibold tracking-tight mb-1"
+                style={{ color: 'var(--text-primary)' }}
+              >
                 iOS Application Developer
               </h3>
               <p className="text-base font-medium mb-4" style={{ color: 'var(--text-secondary)' }}>
                 Yudiz Solutions · Ahmedabad, India
               </p>
-              <p className="text-base leading-relaxed mb-6" style={{ color: 'var(--text-secondary)' }}>
-                End-to-end ownership of native iOS products spanning parental control, healthcare telehealth, OTT, and
-                creator engagement platforms.
+              <p
+                className="text-base leading-relaxed mb-6"
+                style={{ color: 'var(--text-secondary)' }}
+              >
+                End-to-end ownership of native iOS products spanning parental control, healthcare
+                telehealth, OTT, and creator engagement platforms.
               </p>
             </motion.div>
 
@@ -69,7 +87,10 @@ export function Experience() {
                   animate={animate && isInView ? { opacity: 1, x: 0 } : false}
                   transition={{ ...getTransition('medium'), delay: 0.12 + index * 0.07 }}
                 >
-                  <span className="mt-2 w-1 h-1 rounded-full flex-shrink-0" style={{ background: 'var(--text-primary)' }} />
+                  <span
+                    className="mt-2 w-1 h-1 rounded-full flex-shrink-0"
+                    style={{ background: 'var(--text-primary)' }}
+                  />
                   <span>{item}</span>
                 </motion.li>
               ))}

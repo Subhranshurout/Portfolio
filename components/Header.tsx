@@ -165,7 +165,10 @@ export function Header() {
             >
               SR
             </div>
-            <span className="text-xl font-bold hidden sm:block" style={{ color: 'var(--text-primary)' }}>
+            <span
+              className="text-xl font-bold hidden sm:block"
+              style={{ color: 'var(--text-primary)' }}
+            >
               Subhranshu Rout
             </span>
           </motion.a>
@@ -304,12 +307,13 @@ export function Header() {
             >
               <div className="flex flex-col min-h-screen pt-20 pb-8">
                 {/* Menu Header */}
-                <div
-                  className="px-6 pb-6 border-b"
-                  style={{ borderColor: 'var(--border-subtle)' }}
-                >
+                <div className="px-6 pb-6 border-b" style={{ borderColor: 'var(--border-subtle)' }}>
                   <div className="flex items-center justify-between">
-                    <h2 id="mobile-menu-title" className="text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>
+                    <h2
+                      id="mobile-menu-title"
+                      className="text-2xl font-bold"
+                      style={{ color: 'var(--text-primary)' }}
+                    >
                       Menu
                     </h2>
                     <button
@@ -328,8 +332,18 @@ export function Header() {
                       aria-label="Close menu"
                       type="button"
                     >
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                      <svg
+                        className="w-5 h-5"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M6 18L18 6M6 6l12 12"
+                        />
                       </svg>
                     </button>
                   </div>
@@ -348,7 +362,9 @@ export function Header() {
                         style={{
                           backgroundColor: isActive ? 'var(--accent-light)' : 'transparent',
                           color: isActive ? 'var(--accent)' : 'var(--text-primary)',
-                          borderLeft: isActive ? `4px solid var(--accent)` : '4px solid transparent',
+                          borderLeft: isActive
+                            ? `4px solid var(--accent)`
+                            : '4px solid transparent',
                         }}
                         aria-current={isActive ? 'page' : undefined}
                         initial={{ opacity: 0, x: -20 }}
@@ -377,10 +393,7 @@ export function Header() {
                 </nav>
 
                 {/* Mobile Footer */}
-                <div
-                  className="px-6 pt-6 border-t"
-                  style={{ borderColor: 'var(--border-subtle)' }}
-                >
+                <div className="px-6 pt-6 border-t" style={{ borderColor: 'var(--border-subtle)' }}>
                   <motion.a
                     href="#contact"
                     onClick={e => handleNavClick(e, 'contact')}

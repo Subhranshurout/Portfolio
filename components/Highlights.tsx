@@ -32,7 +32,12 @@ export function Highlights() {
   const isInView = useInView(ref, { once: true, margin: '-100px' })
 
   return (
-    <section id="highlights" ref={ref} className="spacing-section" style={{ backgroundColor: 'var(--bg-elevated)' }}>
+    <section
+      id="highlights"
+      ref={ref}
+      className="spacing-section"
+      style={{ backgroundColor: 'var(--bg-elevated)' }}
+    >
       <div className="container mx-auto px-4">
         <motion.div
           className="card p-8 md:p-12 max-w-4xl mx-auto"
@@ -56,8 +61,9 @@ export function Highlights() {
             transition={{ delay: 0.3 }}
             style={{ color: 'var(--text-secondary)' }}
           >
-            Senior iOS engineer shipping native apps across Parental Control, Healthcare (HIPAA-aligned), OTT, and
-            Real-Time Communication—with emphasis on system frameworks, performance, and store-ready architecture.
+            Senior iOS engineer shipping native apps across Parental Control, Healthcare
+            (HIPAA-aligned), OTT, and Real-Time Communication—with emphasis on system frameworks,
+            performance, and store-ready architecture.
           </motion.p>
           <div className="flex flex-wrap gap-4">
             {highlights.map((highlight, index) => (

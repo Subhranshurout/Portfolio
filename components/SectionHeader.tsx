@@ -6,7 +6,13 @@ type SectionHeaderProps = {
   spacious?: boolean
 }
 
-export function SectionHeader({ label, title, description, align = 'left', spacious = false }: SectionHeaderProps) {
+export function SectionHeader({
+  label,
+  title,
+  description,
+  align = 'left',
+  spacious = false,
+}: SectionHeaderProps) {
   const isCenter = align === 'center'
   const headerClass = [
     'section-header',

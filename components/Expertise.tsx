@@ -14,7 +14,11 @@ export function Expertise() {
   const animate = hydrated && !reduced
 
   return (
-    <section id="expertise" className="spacing-section expertise-section" style={{ backgroundColor: 'var(--bg)' }}>
+    <section
+      id="expertise"
+      className="spacing-section expertise-section"
+      style={{ backgroundColor: 'var(--bg)' }}
+    >
       <div className="container mx-auto">
         <FadeIn>
           <SectionHeader
@@ -32,7 +36,10 @@ export function Expertise() {
               <h3 className="expertise-card__title">B.Tech — Electronics & Telecommunication</h3>
               <p className="expertise-card__meta">DRIEMS University · Cuttack, Odisha · 2023</p>
               <div className="expertise-card__cgpa">
-                <span className="text-2xl font-semibold tracking-tight" style={{ color: 'var(--text-primary)' }}>
+                <span
+                  className="text-2xl font-semibold tracking-tight"
+                  style={{ color: 'var(--text-primary)' }}
+                >
                   9.2
                 </span>
                 <span className="text-sm" style={{ color: 'var(--text-tertiary)' }}>
@@ -69,7 +76,10 @@ export function Expertise() {
                         initial={animate ? { opacity: 0, scale: 0.92 } : false}
                         whileInView={animate ? { opacity: 1, scale: 1 } : undefined}
                         viewport={viewport}
-                        transition={{ ...getTransition('fast'), delay: 0.3 + groupIndex * 0.06 + tagIndex * 0.02 }}
+                        transition={{
+                          ...getTransition('fast'),
+                          delay: 0.3 + groupIndex * 0.06 + tagIndex * 0.02,
+                        }}
                         whileHover={reduced ? {} : { y: -2 }}
                       >
                         {item}

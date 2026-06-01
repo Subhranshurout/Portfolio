@@ -28,7 +28,12 @@ const services = [
       'Profile-driven optimization of launch time, rendering cycles, and memory—eliminating leaks and UI jank on production traffic.',
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d="M13 10V3L4 14h7v7l9-11h-7z"
+        />
       </svg>
     ),
   },
@@ -71,7 +76,12 @@ export function Skills() {
   const isInView = useInView(ref, { once: true, margin: '-100px' })
 
   return (
-    <section id="skills" ref={ref} className="spacing-section" style={{ backgroundColor: 'var(--bg-elevated)' }}>
+    <section
+      id="skills"
+      ref={ref}
+      className="spacing-section"
+      style={{ backgroundColor: 'var(--bg-elevated)' }}
+    >
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 max-w-6xl mx-auto">
           <motion.div
@@ -84,9 +94,9 @@ export function Skills() {
               Engineering Focus
             </h2>
             <p className="leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-              I deliver production-grade native iOS across regulated healthcare, system-level parental controls, high-traffic
-              OTT, and real-time social/video products—pairing modern Swift concurrency with rigorous architecture and
-              performance discipline.
+              I deliver production-grade native iOS across regulated healthcare, system-level
+              parental controls, high-traffic OTT, and real-time social/video products—pairing
+              modern Swift concurrency with rigorous architecture and performance discipline.
             </p>
             <motion.a
               href="#contact"
@@ -111,7 +121,8 @@ export function Skills() {
                 <div
                   className="w-14 h-14 rounded-lg flex items-center justify-center text-white mb-4 shadow-md group-hover:scale-110 transition-transform duration-300"
                   style={{
-                    background: 'linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%)',
+                    background:
+                      'linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%)',
                   }}
                 >
                   {service.icon}
@@ -120,7 +131,10 @@ export function Skills() {
                 <h3 className="text-xl font-bold mb-2" style={{ color: 'var(--text-primary)' }}>
                   {service.title}
                   {service.subtitle && (
-                    <span className="text-base font-normal block mt-1" style={{ color: 'var(--text-secondary)' }}>
+                    <span
+                      className="text-base font-normal block mt-1"
+                      style={{ color: 'var(--text-secondary)' }}
+                    >
                       {service.subtitle}
                     </span>
                   )}

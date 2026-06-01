@@ -70,7 +70,15 @@ export function Contact() {
 
       if (response.ok && data.sent) {
         setSubmitStatus('success')
-        setFormData({ name: '', email: '', location: '', budget: '', subject: '', message: '', honeypot: '' })
+        setFormData({
+          name: '',
+          email: '',
+          location: '',
+          budget: '',
+          subject: '',
+          message: '',
+          honeypot: '',
+        })
         return
       }
 
@@ -110,7 +118,10 @@ export function Contact() {
               <div className="contact-detail">
                 <dt className="contact-detail__label">Email</dt>
                 <dd>
-                  <a href={`mailto:${CONTACT_EMAIL}`} className="contact-detail__value contact-detail__link">
+                  <a
+                    href={`mailto:${CONTACT_EMAIL}`}
+                    className="contact-detail__value contact-detail__link"
+                  >
                     {CONTACT_EMAIL}
                   </a>
                 </dd>
@@ -122,7 +133,10 @@ export function Contact() {
               <div className="contact-detail">
                 <dt className="contact-detail__label">Phone</dt>
                 <dd>
-                  <a href="tel:+917077955230" className="contact-detail__value contact-detail__link">
+                  <a
+                    href="tel:+917077955230"
+                    className="contact-detail__value contact-detail__link"
+                  >
                     +91 7077955230
                   </a>
                 </dd>
@@ -131,126 +145,126 @@ export function Contact() {
           </FadeIn>
 
           <FadeIn delay={0.12} y={20}>
-          <form onSubmit={handleSubmit} className="contact-form" noValidate>
-            <input
-              type="text"
-              name="honeypot"
-              value={formData.honeypot}
-              onChange={e => setFormData({ ...formData, honeypot: e.target.value })}
-              className="hidden"
-              tabIndex={-1}
-              autoComplete="off"
-              aria-hidden
-            />
-
-            <div className="contact-form__row">
-              <div className="contact-form__field">
-                <label htmlFor="name" className="sr-only">
-                  Name
-                </label>
-                <input
-                  id="name"
-                  type="text"
-                  placeholder="Name *"
-                  value={formData.name}
-                  onChange={e => setFormData({ ...formData, name: e.target.value })}
-                  className="input-field"
-                  aria-invalid={!!errors.name}
-                />
-                {errors.name && <p className="contact-form__error">{errors.name}</p>}
-              </div>
-              <div className="contact-form__field">
-                <label htmlFor="email" className="sr-only">
-                  Email
-                </label>
-                <input
-                  id="email"
-                  type="email"
-                  placeholder="Email *"
-                  value={formData.email}
-                  onChange={e => setFormData({ ...formData, email: e.target.value })}
-                  className="input-field"
-                  aria-invalid={!!errors.email}
-                />
-                {errors.email && <p className="contact-form__error">{errors.email}</p>}
-              </div>
-            </div>
-
-            <div className="contact-form__field">
+            <form onSubmit={handleSubmit} className="contact-form" noValidate>
               <input
                 type="text"
-                placeholder="Location (optional)"
-                value={formData.location}
-                onChange={e => setFormData({ ...formData, location: e.target.value })}
-                className="input-field"
+                name="honeypot"
+                value={formData.honeypot}
+                onChange={e => setFormData({ ...formData, honeypot: e.target.value })}
+                className="hidden"
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden
               />
-            </div>
 
-            <div className="contact-form__row">
+              <div className="contact-form__row">
+                <div className="contact-form__field">
+                  <label htmlFor="name" className="sr-only">
+                    Name
+                  </label>
+                  <input
+                    id="name"
+                    type="text"
+                    placeholder="Name *"
+                    value={formData.name}
+                    onChange={e => setFormData({ ...formData, name: e.target.value })}
+                    className="input-field"
+                    aria-invalid={!!errors.name}
+                  />
+                  {errors.name && <p className="contact-form__error">{errors.name}</p>}
+                </div>
+                <div className="contact-form__field">
+                  <label htmlFor="email" className="sr-only">
+                    Email
+                  </label>
+                  <input
+                    id="email"
+                    type="email"
+                    placeholder="Email *"
+                    value={formData.email}
+                    onChange={e => setFormData({ ...formData, email: e.target.value })}
+                    className="input-field"
+                    aria-invalid={!!errors.email}
+                  />
+                  {errors.email && <p className="contact-form__error">{errors.email}</p>}
+                </div>
+              </div>
+
               <div className="contact-form__field">
                 <input
                   type="text"
-                  placeholder="Budget (optional)"
-                  value={formData.budget}
-                  onChange={e => setFormData({ ...formData, budget: e.target.value })}
+                  placeholder="Location (optional)"
+                  value={formData.location}
+                  onChange={e => setFormData({ ...formData, location: e.target.value })}
                   className="input-field"
                 />
               </div>
+
+              <div className="contact-form__row">
+                <div className="contact-form__field">
+                  <input
+                    type="text"
+                    placeholder="Budget (optional)"
+                    value={formData.budget}
+                    onChange={e => setFormData({ ...formData, budget: e.target.value })}
+                    className="input-field"
+                  />
+                </div>
+                <div className="contact-form__field">
+                  <input
+                    type="text"
+                    placeholder="Subject *"
+                    value={formData.subject}
+                    onChange={e => setFormData({ ...formData, subject: e.target.value })}
+                    className="input-field"
+                    aria-invalid={!!errors.subject}
+                  />
+                  {errors.subject && <p className="contact-form__error">{errors.subject}</p>}
+                </div>
+              </div>
+
               <div className="contact-form__field">
-                <input
-                  type="text"
-                  placeholder="Subject *"
-                  value={formData.subject}
-                  onChange={e => setFormData({ ...formData, subject: e.target.value })}
-                  className="input-field"
-                  aria-invalid={!!errors.subject}
+                <textarea
+                  placeholder="Message *"
+                  rows={6}
+                  value={formData.message}
+                  onChange={e => setFormData({ ...formData, message: e.target.value })}
+                  className="input-field input-field--textarea resize-none"
+                  aria-invalid={!!errors.message}
                 />
-                {errors.subject && <p className="contact-form__error">{errors.subject}</p>}
+                {errors.message && <p className="contact-form__error">{errors.message}</p>}
               </div>
-            </div>
 
-            <div className="contact-form__field">
-              <textarea
-                placeholder="Message *"
-                rows={6}
-                value={formData.message}
-                onChange={e => setFormData({ ...formData, message: e.target.value })}
-                className="input-field input-field--textarea resize-none"
-                aria-invalid={!!errors.message}
-              />
-              {errors.message && <p className="contact-form__error">{errors.message}</p>}
-            </div>
+              {submitStatus === 'success' && (
+                <p className="contact-form__notice contact-form__notice--success">
+                  Message sent. Thank you — I&apos;ll get back to you soon.
+                </p>
+              )}
+              {submitStatus === 'mailto' && (
+                <p className="contact-form__notice">
+                  Your email app should open with a pre-filled message to {CONTACT_EMAIL}.
+                </p>
+              )}
+              {submitStatus === 'error' && (
+                <p className="contact-form__notice contact-form__notice--error">
+                  Could not send. Please email{' '}
+                  <a href={`mailto:${CONTACT_EMAIL}`} className="underline">
+                    {CONTACT_EMAIL}
+                  </a>{' '}
+                  directly.
+                </p>
+              )}
 
-            {submitStatus === 'success' && (
-              <p className="contact-form__notice contact-form__notice--success">
-                Message sent. Thank you — I&apos;ll get back to you soon.
-              </p>
-            )}
-            {submitStatus === 'mailto' && (
-              <p className="contact-form__notice">
-                Your email app should open with a pre-filled message to {CONTACT_EMAIL}.
-              </p>
-            )}
-            {submitStatus === 'error' && (
-              <p className="contact-form__notice contact-form__notice--error">
-                Could not send. Please email{' '}
-                <a href={`mailto:${CONTACT_EMAIL}`} className="underline">
-                  {CONTACT_EMAIL}
-                </a>{' '}
-                directly.
-              </p>
-            )}
-
-            <motion.button
-              type="submit"
-              disabled={isSubmitting}
-              className="contact-form__submit btn-primary rounded-full"
-              whileHover={prefersReducedMotion() ? {} : { scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              {isSubmitting ? 'Sending…' : 'Send message'}
-            </motion.button>
-          </form>
+              <motion.button
+                type="submit"
+                disabled={isSubmitting}
+                className="contact-form__submit btn-primary rounded-full"
+                whileHover={prefersReducedMotion() ? {} : { scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                {isSubmitting ? 'Sending…' : 'Send message'}
+              </motion.button>
+            </form>
           </FadeIn>
         </div>
       </div>

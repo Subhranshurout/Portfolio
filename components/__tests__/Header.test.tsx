@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react'
+import { render, screen, within } from '@testing-library/react'
 import { Header } from '../Header'
 import { ThemeProvider } from '../ThemeProvider'
 
@@ -16,11 +16,13 @@ describe('Header', () => {
   it('renders navigation links', () => {
     renderWithProviders(<Header />)
 
-    expect(screen.getByText('About')).toBeInTheDocument()
-    expect(screen.getByText('Experience')).toBeInTheDocument()
-    expect(screen.getByText('Projects')).toBeInTheDocument()
-    expect(screen.getByText('Skills')).toBeInTheDocument()
-    expect(screen.getByText('Contact')).toBeInTheDocument()
+    const nav = screen.getByRole('navigation', { name: 'Main navigation' })
+
+    expect(within(nav).getByText('About')).toBeInTheDocument()
+    expect(within(nav).getByText('Experience')).toBeInTheDocument()
+    expect(within(nav).getByText('Projects')).toBeInTheDocument()
+    expect(within(nav).getByText('Expertise')).toBeInTheDocument()
+    expect(within(nav).getAllByText('Contact').length).toBeGreaterThan(0)
   })
 
   it('has accessible navigation landmark', () => {
@@ -33,16 +35,14 @@ describe('Header', () => {
   it('renders theme toggle', () => {
     renderWithProviders(<Header />)
 
-    // There are multiple theme toggles (desktop and mobile), so use getAllByRole
     const themeToggles = screen.getAllByRole('button', { name: /Switch to/i })
     expect(themeToggles.length).toBeGreaterThan(0)
   })
 
-  it('renders hire me button', () => {
+  it('renders contact button', () => {
     renderWithProviders(<Header />)
 
-    // There are multiple "Hire Me" buttons (desktop and mobile), so use getAllByText
-    const hireMeButtons = screen.getAllByText('Hire Me')
-    expect(hireMeButtons.length).toBeGreaterThan(0)
+    const contactButtons = screen.getAllByRole('link', { name: 'Contact' })
+    expect(contactButtons.length).toBeGreaterThan(0)
   })
 })

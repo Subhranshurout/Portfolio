@@ -72,7 +72,6 @@ export function ThemeToggle() {
           )}
         </AnimatePresence>
       </div>
-
     </motion.button>
   )
 }

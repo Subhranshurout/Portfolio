@@ -20,13 +20,20 @@ export function CTA() {
   return (
     <section
       className="cta-section border-y"
-      style={{ backgroundColor: 'var(--cta-bg)', color: 'var(--cta-text)', borderColor: 'var(--border-medium)' }}
+      style={{
+        backgroundColor: 'var(--cta-bg)',
+        color: 'var(--cta-text)',
+        borderColor: 'var(--border-medium)',
+      }}
     >
       <div className="container mx-auto text-center max-w-2xl">
         <FadeIn className="space-y-5">
-          <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">Ready to build on iOS?</h2>
+          <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">
+            Ready to build on iOS?
+          </h2>
           <p className="text-base opacity-80 leading-relaxed">
-            Available for full-time roles, contract work, and technical consulting on native Apple platforms.
+            Available for full-time roles, contract work, and technical consulting on native Apple
+            platforms.
           </p>
           <motion.button
             onClick={handleContactClick}

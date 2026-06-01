@@ -33,20 +33,33 @@ function HeroHeadline() {
 
 function HeroBody() {
   return (
-    <p className="text-lg md:text-xl leading-relaxed mb-8 max-w-2xl" style={{ color: 'var(--text-secondary)' }}>
-      <strong style={{ color: 'var(--text-primary)', fontWeight: 600 }}>3+ years</strong> shipping production apps
-      in parental control, healthcare, OTT, e-commerce, and real-time communication — Swift, SwiftUI, UIKit, and
-      system-level Apple frameworks.
+    <p
+      className="text-lg md:text-xl leading-relaxed mb-8 max-w-2xl"
+      style={{ color: 'var(--text-secondary)' }}
+    >
+      <strong style={{ color: 'var(--text-primary)', fontWeight: 600 }}>3+ years</strong> shipping
+      production apps in parental control, healthcare, OTT, e-commerce, and real-time communication
+      — Swift, SwiftUI, UIKit, and system-level Apple frameworks.
     </p>
   )
 }
 
 function HeroStats() {
   return (
-    <div className="grid grid-cols-3 gap-px max-w-lg rounded-xl overflow-hidden border" style={{ borderColor: 'var(--border-subtle)' }}>
+    <div
+      className="grid grid-cols-3 gap-px max-w-lg rounded-xl overflow-hidden border"
+      style={{ borderColor: 'var(--border-subtle)' }}
+    >
       {stats.map(stat => (
-        <div key={stat.label} className="px-4 py-5 text-center" style={{ background: 'var(--bg-elevated)' }}>
-          <div className="text-xl md:text-2xl font-semibold tracking-tight mb-0.5" style={{ color: 'var(--text-primary)' }}>
+        <div
+          key={stat.label}
+          className="px-4 py-5 text-center"
+          style={{ background: 'var(--bg-elevated)' }}
+        >
+          <div
+            className="text-xl md:text-2xl font-semibold tracking-tight mb-0.5"
+            style={{ color: 'var(--text-primary)' }}
+          >
             {stat.number}
           </div>
           <div className="text-xs font-medium" style={{ color: 'var(--text-tertiary)' }}>
@@ -82,7 +95,10 @@ export function Hero() {
             <HeroHeadline />
             <HeroBody />
             <div className="flex flex-col sm:flex-row gap-4 mb-20 md:mb-24">
-              <button onClick={handleScrollToWork} className="px-7 py-3.5 rounded-full text-sm font-semibold btn-primary h-12">
+              <button
+                onClick={handleScrollToWork}
+                className="px-7 py-3.5 rounded-full text-sm font-semibold btn-primary h-12"
+              >
                 View projects
               </button>
               <a
@@ -103,7 +119,12 @@ export function Hero() {
   return (
     <section className="relative min-h-[88vh] flex items-center gradient-bg-hero border-b hero-section">
       <div className="container mx-auto">
-        <motion.div className="max-w-3xl" initial="hidden" animate="visible" variants={staggerContainer}>
+        <motion.div
+          className="max-w-3xl"
+          initial="hidden"
+          animate="visible"
+          variants={staggerContainer}
+        >
           <motion.div variants={fadeUp} transition={getTransition('medium')}>
             <HeroKicker />
           </motion.div>
@@ -113,7 +134,11 @@ export function Hero() {
           <motion.div variants={fadeUp} transition={getTransition('medium')}>
             <HeroBody />
           </motion.div>
-          <motion.div className="flex flex-col sm:flex-row gap-4 mb-20 md:mb-24" variants={fadeUp} transition={getTransition('medium')}>
+          <motion.div
+            className="flex flex-col sm:flex-row gap-4 mb-20 md:mb-24"
+            variants={fadeUp}
+            transition={getTransition('medium')}
+          >
             <motion.button
               onClick={handleScrollToWork}
               className="px-7 py-3.5 rounded-full text-sm font-semibold btn-primary h-12"
@@ -146,7 +171,10 @@ export function Hero() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ ...getTransition('medium'), delay: 0.4 + index * 0.08 }}
                 >
-                  <div className="text-xl md:text-2xl font-semibold tracking-tight mb-0.5" style={{ color: 'var(--text-primary)' }}>
+                  <div
+                    className="text-xl md:text-2xl font-semibold tracking-tight mb-0.5"
+                    style={{ color: 'var(--text-primary)' }}
+                  >
                     {stat.number}
                   </div>
                   <div className="text-xs font-medium" style={{ color: 'var(--text-tertiary)' }}>

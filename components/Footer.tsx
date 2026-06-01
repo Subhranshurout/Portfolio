@@ -28,7 +28,10 @@ export function Footer() {
   }
 
   return (
-    <footer className="py-10 border-t" style={{ backgroundColor: 'var(--bg)', borderColor: 'var(--border-subtle)' }}>
+    <footer
+      className="py-10 border-t"
+      style={{ backgroundColor: 'var(--bg)', borderColor: 'var(--border-subtle)' }}
+    >
       <FadeIn y={16}>
         <div className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-3">
