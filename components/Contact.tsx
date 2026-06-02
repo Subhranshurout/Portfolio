@@ -95,8 +95,8 @@ export function Contact() {
     <section id="contact" className="contact-section gradient-bg-section">
       <div className="container mx-auto max-w-5xl">
         <div className="contact-layout">
-          <FadeIn className="contact-info">
-            <div className="contact-intro">
+          <div className="contact-info">
+            <div className="contact-intro section-intro--contact">
               <SectionHeader
                 label="Contact"
                 title="Let's discuss your project"
@@ -104,26 +104,24 @@ export function Contact() {
               />
             </div>
 
-            <dl className="contact-details">
+            <div className="contact-details">
               <div className="contact-detail">
-                <dt className="contact-detail__label">Email</dt>
-                <dd>
-                  <a
-                    href={`mailto:${CONTACT_EMAIL}`}
-                    className="contact-detail__value contact-detail__link"
-                  >
-                    {CONTACT_EMAIL}
-                  </a>
-                </dd>
+                <p className="contact-detail__label">Email</p>
+                <a
+                  href={`mailto:${CONTACT_EMAIL}`}
+                  className="contact-detail__value contact-detail__link"
+                >
+                  {CONTACT_EMAIL}
+                </a>
               </div>
               <div className="contact-detail">
-                <dt className="contact-detail__label">Location</dt>
-                <dd className="contact-detail__value">Ahmedabad, India</dd>
+                <p className="contact-detail__label">Location</p>
+                <p className="contact-detail__value">Ahmedabad, India</p>
               </div>
-            </dl>
-          </FadeIn>
+            </div>
+          </div>
 
-          <FadeIn delay={0.12} y={20}>
+          <FadeIn delay={0.12} noOffset>
             <form onSubmit={handleSubmit} className="contact-form" noValidate>
               <input
                 type="text"
