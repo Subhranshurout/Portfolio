@@ -5,7 +5,6 @@ import projectsData from '@/data/projects.json'
 import { CaseStudyModal } from './CaseStudyModal'
 import { ProjectThumbnail } from './ProjectThumbnail'
 import { SectionHeader } from './SectionHeader'
-import { FadeIn } from './motion/FadeIn'
 import { StaggerGrid, StaggerItem } from './motion/StaggerGrid'
 
 type Project = {
@@ -28,23 +27,23 @@ export function Projects() {
     <>
       <section id="projects" className="spacing-section projects-section gradient-bg-section">
         <div className="container mx-auto">
-          <FadeIn>
-            <SectionHeader
-              label="Work"
-              title="Selected projects"
-              description="Production iOS apps across parental control, healthcare, OTT, commerce, and real-time engagement."
-              align="center"
-              spacious
-            />
-          </FadeIn>
+        <div className="section-intro section-intro--center section-intro--work">
+          <SectionHeader
+            label="Work"
+            title="Selected projects"
+            description="Production iOS apps across parental control, healthcare, OTT, commerce, and real-time engagement."
+            align="center"
+            spacious
+          />
+        </div>
 
-          <StaggerGrid className="projects-grid max-w-6xl mx-auto">
+        <StaggerGrid className="projects-grid projects-grid--work max-w-6xl mx-auto">
             {projects.map(project => (
               <StaggerItem
                 key={project.id}
                 role="button"
                 tabIndex={0}
-                className="card card--natural card--interactive cursor-pointer group"
+                className="project-card group"
                 onClick={() => setSelectedProject(project)}
                 onKeyDown={e => {
                   if (e.key === 'Enter' || e.key === ' ') {
@@ -53,31 +52,16 @@ export function Projects() {
                   }
                 }}
               >
-                <div className="overflow-hidden rounded-t-[inherit]">
-                  <ProjectThumbnail abbr={project.thumbnail.abbr} label={project.thumbnail.label} />
-                </div>
+                <ProjectThumbnail projectId={project.id} />
                 <div className="card-body">
-                  <p
-                    className="project-card__category text-xs font-medium uppercase tracking-widest"
-                    style={{ color: 'var(--text-tertiary)' }}
-                  >
-                    {project.category}
-                  </p>
-                  <h3
-                    className="project-card__title text-lg font-semibold tracking-tight"
-                    style={{ color: 'var(--text-primary)' }}
-                  >
-                    {project.title}
-                  </h3>
+                  <p className="project-card__category">{project.category}</p>
+                  <h3 className="project-card__title">{project.title}</h3>
                   <p className="project-card__description">{project.description}</p>
-                  <span
-                    className="text-sm font-medium inline-flex items-center gap-1 group-hover:gap-2 transition-all duration-300"
-                    style={{ color: 'var(--text-primary)' }}
-                  >
+                  <span className="project-card__link">
                     View case study
                     <span
                       aria-hidden
-                      className="inline-block transition-transform duration-300 group-hover:translate-x-0.5"
+                      className="transition-transform duration-200 group-hover:translate-x-0.5"
                     >
                       →
                     </span>

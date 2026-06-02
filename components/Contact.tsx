@@ -21,7 +21,6 @@ export function Contact() {
     name: '',
     email: '',
     location: '',
-    budget: '',
     subject: '',
     message: '',
     honeypot: '',
@@ -61,7 +60,6 @@ export function Contact() {
           subject: formData.subject.trim(),
           message: formData.message.trim(),
           location: formData.location.trim(),
-          budget: formData.budget.trim(),
           honeypot: formData.honeypot,
         }),
       })
@@ -70,15 +68,7 @@ export function Contact() {
 
       if (response.ok && data.sent) {
         setSubmitStatus('success')
-        setFormData({
-          name: '',
-          email: '',
-          location: '',
-          budget: '',
-          subject: '',
-          message: '',
-          honeypot: '',
-        })
+        setFormData({ name: '', email: '', location: '', subject: '', message: '', honeypot: '' })
         return
       }
 
@@ -102,7 +92,7 @@ export function Contact() {
   }
 
   return (
-    <section id="contact" className="spacing-section contact-section gradient-bg-section">
+    <section id="contact" className="contact-section gradient-bg-section">
       <div className="container mx-auto max-w-5xl">
         <div className="contact-layout">
           <FadeIn className="contact-info">
@@ -130,17 +120,6 @@ export function Contact() {
                 <dt className="contact-detail__label">Location</dt>
                 <dd className="contact-detail__value">Ahmedabad, India</dd>
               </div>
-              <div className="contact-detail">
-                <dt className="contact-detail__label">Phone</dt>
-                <dd>
-                  <a
-                    href="tel:+917077955230"
-                    className="contact-detail__value contact-detail__link"
-                  >
-                    +91 7077955230
-                  </a>
-                </dd>
-              </div>
             </dl>
           </FadeIn>
 
@@ -157,7 +136,7 @@ export function Contact() {
                 aria-hidden
               />
 
-              <div className="contact-form__row">
+              <div className="contact-form__row contact-form__row--split">
                 <div className="contact-form__field">
                   <label htmlFor="name" className="sr-only">
                     Name
@@ -200,27 +179,16 @@ export function Contact() {
                 />
               </div>
 
-              <div className="contact-form__row">
-                <div className="contact-form__field">
-                  <input
-                    type="text"
-                    placeholder="Budget (optional)"
-                    value={formData.budget}
-                    onChange={e => setFormData({ ...formData, budget: e.target.value })}
-                    className="input-field"
-                  />
-                </div>
-                <div className="contact-form__field">
-                  <input
-                    type="text"
-                    placeholder="Subject *"
-                    value={formData.subject}
-                    onChange={e => setFormData({ ...formData, subject: e.target.value })}
-                    className="input-field"
-                    aria-invalid={!!errors.subject}
-                  />
-                  {errors.subject && <p className="contact-form__error">{errors.subject}</p>}
-                </div>
+              <div className="contact-form__field">
+                <input
+                  type="text"
+                  placeholder="Subject *"
+                  value={formData.subject}
+                  onChange={e => setFormData({ ...formData, subject: e.target.value })}
+                  className="input-field"
+                  aria-invalid={!!errors.subject}
+                />
+                {errors.subject && <p className="contact-form__error">{errors.subject}</p>}
               </div>
 
               <div className="contact-form__field">
@@ -258,9 +226,9 @@ export function Contact() {
               <motion.button
                 type="submit"
                 disabled={isSubmitting}
-                className="contact-form__submit btn-primary rounded-full"
-                whileHover={prefersReducedMotion() ? {} : { scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
+                className="contact-form__submit"
+                whileHover={prefersReducedMotion() ? {} : { scale: 1.01 }}
+                whileTap={{ scale: 0.99 }}
               >
                 {isSubmitting ? 'Sending…' : 'Send message'}
               </motion.button>

@@ -11,9 +11,18 @@ type FadeInProps = {
   y?: number
   once?: boolean
   className?: string
+  /** Opacity-only fade — avoids mobile overlap from translateY */
+  noOffset?: boolean
 }
 
-export function FadeIn({ children, delay = 0, y = 24, once = true, className }: FadeInProps) {
+export function FadeIn({
+  children,
+  delay = 0,
+  y = 24,
+  once = true,
+  className,
+  noOffset = false,
+}: FadeInProps) {
   const hydrated = useHydrated()
   const reduced = prefersReducedMotion()
 
@@ -21,11 +30,14 @@ export function FadeIn({ children, delay = 0, y = 24, once = true, className }: 
     return <div className={className}>{children}</div>
   }
 
+  const initial = noOffset ? { opacity: 0 } : { opacity: 0, y }
+  const animate = noOffset ? { opacity: 1 } : { opacity: 1, y: 0 }
+
   return (
     <motion.div
       className={className}
-      initial={{ opacity: 0, y }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={initial}
+      whileInView={animate}
       viewport={{ ...viewport, once }}
       transition={{ ...getTransition('medium'), delay }}
     >

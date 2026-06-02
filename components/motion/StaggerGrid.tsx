@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import { getTransition, prefersReducedMotion } from '@/lib/motionTokens'
 import { useHydrated } from '@/lib/useHydrated'
-import { fadeUp, staggerContainer, viewport } from '@/lib/motionVariants'
+import { fadeIn, staggerContainer, viewport } from '@/lib/motionVariants'
 
 type StaggerGridProps = {
   children: React.ReactNode
@@ -55,10 +55,8 @@ export function StaggerItem({ children, className, ...props }: StaggerItemProps)
   return (
     <motion.div
       className={className}
-      variants={fadeUp}
+      variants={fadeIn}
       transition={getTransition('medium')}
-      whileHover={{ y: -4, transition: getTransition('fast') }}
-      whileTap={{ scale: 0.99 }}
       {...props}
     >
       {children}

@@ -54,7 +54,7 @@ export function itemTransition(delay = 0) {
 
 export const viewport = {
   once: true,
-  margin: '-60px' as const,
+  margin: '0px 0px -40px 0px' as const,
 }
 
 export const heroViewport = {

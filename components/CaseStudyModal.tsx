@@ -91,11 +91,7 @@ export function CaseStudyModal({ project, onClose }: CaseStudyModalProps) {
             ×
           </button>
 
-          <ProjectThumbnail
-            abbr={project.thumbnail.abbr}
-            label={project.thumbnail.label}
-            size="lg"
-          />
+          <ProjectThumbnail projectId={project.id} />
 
           <div className="p-6 md:p-8">
             <p

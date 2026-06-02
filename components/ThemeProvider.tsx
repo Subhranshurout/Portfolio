@@ -12,20 +12,16 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined)
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useState<Theme>('light')
+  const [theme, setTheme] = useState<Theme>('dark')
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
     setMounted(true)
     try {
       const stored = localStorage.getItem('theme') as Theme | null
-      // Validate stored theme value
       const validThemes: Theme[] = ['light', 'dark']
       const isValidTheme = stored && validThemes.includes(stored)
-
-      // Respect prefers-color-scheme on first load (if no saved choice)
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
-      const initialTheme = isValidTheme ? stored : prefersDark ? 'dark' : 'light'
+      const initialTheme = isValidTheme ? stored : 'dark'
       setTheme(initialTheme)
       document.documentElement.setAttribute('data-theme', initialTheme)
     } catch (error) {

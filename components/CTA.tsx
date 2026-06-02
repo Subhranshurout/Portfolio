@@ -18,27 +18,18 @@ export function CTA() {
   }
 
   return (
-    <section
-      className="cta-section border-y"
-      style={{
-        backgroundColor: 'var(--cta-bg)',
-        color: 'var(--cta-text)',
-        borderColor: 'var(--border-medium)',
-      }}
-    >
-      <div className="container mx-auto text-center max-w-2xl">
-        <FadeIn className="space-y-5">
-          <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">
-            Ready to build on iOS?
-          </h2>
-          <p className="text-base opacity-80 leading-relaxed">
+    <section className="cta-section border-y" style={{ borderColor: 'var(--border-subtle)' }}>
+      <div className="container mx-auto max-w-2xl">
+        <FadeIn className="space-y-6">
+          <h2 className="cta-section__title">Ready to build on iOS?</h2>
+          <p className="text-base leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
             Available for full-time roles, contract work, and technical consulting on native Apple
             platforms.
           </p>
           <motion.button
             onClick={handleContactClick}
-            className="px-7 py-3.5 rounded-full text-sm font-semibold mt-2 h-12 btn-secondary"
-            whileHover={reduced ? {} : { scale: 1.02, y: -1 }}
+            className="btn-primary px-7 py-3 min-h-[44px]"
+            whileHover={reduced ? {} : { scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             transition={getTransition('fast')}
           >
